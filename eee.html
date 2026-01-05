@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1分でわかる！所得税の仕組み</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f5a623;
+            --bg-color: #f0f4f8;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --accent-green: #52c41a;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary-color), #67b26f);
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 { margin: 0; font-size: 2rem; }
+        p.subtitle { margin-top: 10px; opacity: 0.9; }
+
+        .section {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+        }
+
+        /* 仕組み図解：収入と所得 */
+        .formula-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: #fffbe6;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px dashed var(--secondary-color);
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .item { text-align: center; flex: 1; min-width: 100px; }
+        .operator { font-size: 2rem; font-weight: bold; color: var(--secondary-color); }
+        .tax-target {
+            color: #f5222d;
+            font-weight: bold;
+            border: 2px solid #f5222d;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* 累進課税の階段図 */
+        .stair-container {
+            display: flex;
+            align-items: flex-end;
+            height: 200px;
+            margin-top: 40px;
+            border-bottom: 2px solid #ccc;
+            padding-left: 20px;
+        }
+
+        .stair {
+            flex: 1;
+            margin: 0 5px;
+            background: var(--primary-color);
+            transition: transform 0.3s;
+            position: relative;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .stair-1 { height: 20%; opacity: 0.4; }
+        .stair-2 { height: 50%; opacity: 0.7; }
+        .stair-3 { height: 90%; opacity: 1.0; background: #e67e22; }
+
+        .stair-label {
+            position: absolute;
+            top: -30px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .stair-caption {
+            position: absolute;
+            bottom: -50px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+
+        /* 納め方比較テーブル */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #eee;
+            text-align: left;
+        }
+
+        th { background-color: #f9f9f9; color: var(--primary-color); }
+
+        .summary {
+            background: #e6f7ff;
+            border: 1px solid #91d5ff;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .summary li {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #0050b3;
+        }
+
+        @media (max-width: 600px) {
+            .formula-box { flex-direction: column; }
+            .operator { transform: rotate(90deg); margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>所得税ってなに？</h1>
+        <p class="subtitle">〜社会を支える「会費」のルール〜</p>
+    </header>
+
+    <div class="section">
+        <h2>1. なぜ払うの？</h2>
+        <p>私たちが使っている<strong>道路、公園、警察、消防</strong>。これらはすべてみんなが払った税金で作られています。所得税は、日本という国で楽しく暮らすための<strong>「みんなの会費」</strong>なんです！</p>
+    </div>
+
+    <div class="section">
+        <h2>2. 税金がかかるのは「利益」だけ！</h2>
+        <p>売上の全部に税金がかかるわけではありません。フリマの例で見てみよう！</p>
+        
+        <div class="formula-box">
+            <div class="item">
+                <div style="font-size: 2rem;">💰</div>
+                <strong>収入</strong><br><small>売った金額<br>(2,000円)</small>
+            </div>
+            <div class="operator">−</div>
+            <div class="item">
+                <div style="font-size: 2rem;">📦</div>
+                <strong>必要経費</strong><br><small>送料・手数料<br>(700円)</small>
+            </div>
+            <div class="operator">＝</div>
+            <div class="item">
+                <div style="font-size: 2rem;">✨</div>
+                <strong>所得</strong><br><small>本当の儲け<br>(1,300円)</small>
+                <div class="tax-target">ここに税金がかかる！</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. たくさん稼ぐ人が多く払う理由</h2>
+        <p>「累進課税」は、<strong>生活の余裕がある人が少し多めに助ける</strong>という、思いやりのあるルールです。</p>
+        
+        <div class="stair-container">
+            <div class="stair stair-1">
+                <div class="stair-label">5%</div>
+                <div class="stair-caption">少し稼ぐ人</div>
+            </div>
+            <div class="stair stair-2">
+                <div class="stair-label">20%</div>
+                <div class="stair-caption">普通に稼ぐ人</div>
+            </div>
+            <div class="stair stair-3">
+                <div class="stair-label">45%</div>
+                <div class="stair-caption">すごく稼ぐ人</div>
+            </div>
+        </div>
+        <p style="margin-top: 60px; font-size: 0.9rem; color: #666;">※階段が高いほど、税金の割合（％）が上がっていきます。</p>
+    </div>
+
+    <div class="section">
+        <h2>4. どうやって納めるの？</h2>
+        <table>
+            <tr>
+                <th>タイプ</th>
+                <th>納め方</th>
+                <th>特徴</th>
+            </tr>
+            <tr>
+                <td><strong>会社員</strong></td>
+                <td>天引き</td>
+                <td>会社が代わりに計算して払ってくれる</td>
+            </tr>
+            <tr>
+                <td><strong>自営業</strong></td>
+                <td>確定申告</td>
+                <td>自分で1年分を計算して国に報告する</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section summary">
+        <h2>✅ 3行まとめ</h2>
+        <ul>
+            <li>所得税は、みんなが安心して暮らすための「社会の会費」！</li>
+            <li>「売上」から「経費」を引いた「本当の利益」にだけかかる！</li>
+            <li>余裕がある人が多めに負担して、みんなを支える仕組み！</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
