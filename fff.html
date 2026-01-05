@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本経済の未来マップ</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --success: #10b981;
+            --accent: #f59e0b;
+            --bg: #f8fafc;
+            --text: #1e293b;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        }
+
+        h1 { margin: 0; font-size: 1.8rem; }
+        .key-concept { font-weight: bold; color: #fbbf24; font-size: 1.2rem; }
+
+        /* セクション共通 */
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 1. 好循環のアニメーション図解 */
+        .loop-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        .circle-item {
+            text-align: center;
+            width: 120px;
+            padding: 15px;
+            background: #eff6ff;
+            border-radius: 50%;
+            border: 2px dashed var(--primary);
+            position: relative;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: var(--primary);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        /* 2. AI・ロボットの比較図 */
+        .vs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .vs-box {
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .old-way { background-color: #fee2e2; }
+        .new-way { background-color: #dcfce7; }
+
+        /* 3. 強みのアイコンリスト */
+        .strength-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .strength-item {
+            background: var(--bg);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .icon { font-size: 2.5rem; display: block; margin-bottom: 5px; }
+
+        /* シミュレーションエリア */
+        .future-box {
+            background: linear-gradient(to right, #6366f1, #a855f7);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .vs-container { grid-template-columns: 1fr; }
+            .arrow { transform: rotate(90deg); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>日本経済が豊かになるための道筋</h1>
+        <p class="key-concept">鍵：安いから買う ➔ 「価値があるから買う」へ</p>
+    </header>
+
+    <section class="card">
+        <h2>① 給料と物価のプラスのループ</h2>
+        <div class="loop-container">
+            <div class="circle-item">良いものを<br>高く売る</div>
+            <div class="arrow">➔</div>
+            <div class="circle-item">会社の<br>利益UP!</div>
+            <div class="arrow">➔</div>
+            <div class="circle-item">みんなの<br>給料UP!</div>
+            <div class="arrow">➔</div>
+            <div class="circle-item">もっと<br>買い物！</div>
+        </div>
+        <p><small>※ケーキ屋さんの例：高くても売れる「最高の一皿」を作ることがスタート！</small></p>
+    </section>
+
+    <section class="card">
+        <h2>② 人手不足を「進化」に変える</h2>
+        <div class="vs-container">
+            <div class="vs-box old-way">
+                <strong>これまで</strong><br>
+                <span class="icon">👷‍♂️👷‍♀️👷</span>
+                10人で一生懸命<br>穴を掘る
+            </div>
+            <div class="vs-box new-way">
+                <strong>これから</strong><br>
+                <span class="icon">🤖🦾✨</span>
+                ロボットが掘り、<br>人は「設計」をする
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>③ 世界で勝てる日本の武器</h2>
+        <div class="strength-grid">
+            <div class="strength-item"><span class="icon">💾</span>半導体<br>(デジタルの脳)</div>
+            <div class="strength-item"><span class="icon">🗾</span>観光<br>(日本ファン作り)</div>
+            <div class="strength-item"><span class="icon">🌱</span>環境技術<br>(地球を救う)</div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>④ 貯金から「応援（投資）」へ</h2>
+        <div style="background: #fffbeb; padding: 15px; border-radius: 10px; border-left: 5px solid var(--accent);">
+            <strong>新NISAのイメージ：</strong><br>
+            眠っているお金を、頑張る企業に貸してあげる。企業は成長し、あなたにはお礼（利益）が届く！
+            <br><span style="font-size: 2rem;">💰 ➔ 🚀 ➔ 📈</span>
+        </div>
+    </section>
+
+    <div class="future-box">
+        <h3>🌈 2040年の明るい未来</h3>
+        <p>「日本製品は高いけれど、やっぱり最高だよね！」<br>
+        世界中からそう言われ、あなたの給料も毎年上がっています。<br>
+        ロボットと協力してスマートに働き、休みは家族と少し贅沢な旅行へ。<br>
+        そんな「自信」に満ちた日本が待っています。</p>
+    </div>
+
+    <footer style="text-align: center; margin-top: 30px; color: #64748b;">
+        <p>中学生向け：日本経済解説マップ</p>
+    </footer>
+</div>
+
+</body>
+</html>
