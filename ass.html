@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最強にわかる「国債」の図解</title>
+    <style>
+        :root {
+            --main-bg: #f0f4f8;
+            --card-bg: #ffffff;
+            --primary-color: #0056b3;
+            --accent-color: #ff9800;
+            --text-color: #333;
+            --border-radius: 15px;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: var(--main-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            border-bottom: 4px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* メイン図解エリア */
+        .diagram-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .actor {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .label {
+            font-weight: bold;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* 矢印と流れ */
+        .flow-container {
+            position: relative;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .arrow {
+            height: 4px;
+            background: #ccc;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .arrow::after {
+            content: '';
+            position: absolute;
+            right: -5px;
+            top: -8px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 15px solid #ccc;
+        }
+
+        .flow-text {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: bold;
+            top: -25px;
+        }
+
+        .money-flow {
+            color: #2e7d32;
+        }
+
+        .bond-flow {
+            color: #c62828;
+            top: 15px;
+        }
+
+        /* 5つのポイントセクション */
+        .points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .point-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .point-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .point-number {
+            background: var(--accent-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .highlight {
+            background: linear-gradient(transparent 70%, #fff176 70%);
+            font-weight: bold;
+        }
+
+        /* クイズセクション */
+        .quiz-box {
+            background: #e3f2fd;
+            border: 2px dashed var(--primary-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            .diagram-area {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .flow-container {
+                transform: rotate(90deg);
+                margin: 20px 0;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>中学生のための「国債」まるわかり図解</h1>
+        <p>国債は、国と私たちの「信頼の約束」です</p>
+    </div>
+
+    <div class="diagram-area">
+        <div class="actor">
+            <span class="icon">👥</span>
+            <span class="label">国民・銀行</span>
+        </div>
+
+        <div class="flow-container">
+            <div class="flow-text money-flow">① お金を貸す</div>
+            <div class="arrow"></div>
+            <div class="flow-text bond-flow">② 国債（証明書）をもらう</div>
+        </div>
+
+        <div class="actor">
+            <span class="icon">🏛️</span>
+            <span class="label">国（政府）</span>
+        </div>
+    </div>
+
+    <div class="points-grid">
+        <div class="point-card">
+            <h3><span class="point-number">1</span>結局、何なの？</h3>
+            <p>国が発行する<span class="highlight">「借金の証明書」</span>です。あとで利息をつけて返す約束です。</p>
+        </div>
+
+        <div class="point-card">
+            <h3><span class="point-number">2</span>なぜ発行する？</h3>
+            <p>税金だけでは、みんなの生活を守る<span class="highlight">お金が足りない</span>からです。</p>
+        </div>
+
+        <div class="point-card">
+            <h3><span class="point-number">3</span>買うメリットは？</h3>
+            <p>銀行より高い利息がつくことも。何より<span class="highlight">「国が保証する安心感」</span>が魅力です。</p>
+        </div>
+
+        <div class="point-card">
+            <h3><span class="point-number">4</span>借金多くて大丈夫？</h3>
+            <p>額は大きいですが、<span class="highlight">身内（日本国民）から借りている</span>ので、すぐに破産はしません。</p>
+        </div>
+
+        <div class="point-card">
+            <h3><span class="point-number">5</span>生活への関わり</h3>
+            <p><span class="highlight">学校、道路、病院</span>など、私たちが毎日使う施設の建設や運営に使われています。</p>
+        </div>
+    </div>
+
+    <div class="quiz-box">
+        <h3>🚩 先生からの復習クイズ！</h3>
+        <p>国債を一番簡単に説明すると、どっち？</p>
+        <div style="margin-top: 15px;">
+            <strong style="color: #c62828;">A：外国から奪ったお金</strong><br>
+            <strong style="color: #2e7d32;">B：あとで利息をつけて返す「借金の約束」</strong>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.8rem; color: #666;">（答えは、このページをよく読めばわかるはず！）</p>
+    </div>
+
+    <div class="footer">
+        © 2026 日本一わかりやすい経済学の先生
+    </div>
+</div>
+
+</body>
+</html>
