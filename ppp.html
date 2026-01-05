@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国債の「大丈夫？」を判定する図解シート</title>
+    <style>
+        :root {
+            --safe-color: #2e7d32;
+            --warning-color: #d32f2f;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 850px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #0056b3, #00bfff);
+            color: white;
+            padding: 30px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header h1 { margin: 0; font-size: 1.8rem; }
+        .header p { margin: 10px 0 0; opacity: 0.9; }
+
+        /* 天秤セクション */
+        .balance-section {
+            background: var(--card-bg);
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .side {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .side-safe {
+            background-color: #e8f5e9;
+            border-top: 8px solid var(--safe-color);
+        }
+
+        .side-warning {
+            background-color: #ffebee;
+            border-top: 8px solid var(--warning-color);
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+        }
+
+        .icon-large { font-size: 2rem; margin-right: 10px; }
+
+        .item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .check-mark {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* 結論の信号機 */
+        .verdict {
+            background: var(--card-bg);
+            padding: 30px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .traffic-light {
+            display: inline-flex;
+            background: #333;
+            padding: 10px 20px;
+            border-radius: 40px;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .light {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .light.yellow { background: #ffeb3b; opacity: 1; box-shadow: 0 0 20px #ffeb3b; }
+
+        .conclusion-box {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .side { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>結局、国債を発行して大丈夫なの？</h1>
+        <p>「今すぐ倒産」はしないけど、「未来への宿題」は増えている状態です</p>
+    </div>
+
+    <div class="balance-section">
+        <div class="side side-safe">
+            <h2><span class="icon-large">✅</span>今は「大丈夫」な理由</h2>
+            <div class="item">
+                <span class="check-mark">🏠</span>
+                <div><strong>貸し手が「身内（日本人）」：</strong><br><small>海外から「今すぐ返せ」と脅される心配が少ない。</small></div>
+            </div>
+            <div class="item">
+                <span class="check-mark">💴</span>
+                <div><strong>「円」を自分で作れる：</strong><br><small>日本は自分で通貨を発行できるから、支払いが止まることはない。</small></div>
+            </div>
+            <div class="item">
+                <span class="check-mark">💰</span>
+                <div><strong>国民の資産がたくさんある：</strong><br><small>みんなの貯金（約2000兆円）が、国債を支える土台になっている。</small></div>
+            </div>
+        </div>
+
+        <div class="side side-warning">
+            <h2><span class="icon-large">⚠️</span>将来「危ない」理由</h2>
+            <div class="item">
+                <span class="check-mark">📈</span>
+                <div><strong>利息の支払いだけで大金：</strong><br><small>借金が増えると利息も増える。教育や医療に使うお金が減っちゃう！</small></div>
+            </div>
+            <div class="item">
+                <span class="check-mark">🌭</span>
+                <div><strong>ひどい物価高（インフレ）：</strong><br><small>お金を刷りすぎると、お金の価値が下がって物の値段が爆上がりするかも。</small></div>
+            </div>
+            <div class="item">
+                <span class="check-mark">🎒</span>
+                <div><strong>将来世代へのツケ：</strong><br><small>今の便利な暮らしの代金を、将来の子供たちが払うことになる。</small></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="verdict">
+        <h3>先生の判定：</h3>
+        <div class="traffic-light">
+            <div class="light" style="background: #4caf50;"></div>
+            <div class="light yellow"></div>
+            <div class="light" style="background: #f44336;"></div>
+        </div>
+        <div class="conclusion-box">
+            「今は黄色信号（注意）。倒産はしないけど、<br>
+            これ以上借金を増やさない工夫が必要な時期です！」
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+            ※「借金＝悪」と決めつけるのではなく、<br>何にお金を使うべきかを考えることが大切なんだよ。
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
