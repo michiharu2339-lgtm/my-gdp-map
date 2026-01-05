@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>円高・円安どっちが良い？最強図解</title>
+    <style>
+        :root {
+            --en-daka: #3498db;
+            --en-yasu: #e74c3c;
+            --bg-color: #f8f9fa;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            background: linear-gradient(90deg, var(--en-daka), var(--en-yasu));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* 共通カードスタイル */
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .en-daka-card { border-top: 10px solid var(--en-daka); }
+        .en-yasu-card { border-top: 10px solid var(--en-yasu); }
+
+        .symbol {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .merit-demerit {
+            margin-top: 20px;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .merit-label { background: #e8f8f5; color: #27ae60; }
+        .demerit-label { background: #fdf2f2; color: #c0392b; }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        li::before {
+            content: "●";
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .en-daka-card li::before { color: var(--en-daka); }
+        .en-yasu-card li::before { color: var(--en-yasu); }
+
+        .summary-box {
+            grid-column: 1 / span 2;
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            border: 2px dashed #ccc;
+            text-align: center;
+        }
+
+        .character-box {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .char {
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .icon { font-size: 2.5rem; display: block; }
+
+        @media (max-width: 600px) {
+            .comparison-grid { grid-template-columns: 1fr; }
+            .summary-box { grid-column: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>円高・円安 どっちが良いの？</h1>
+        <p>「自分にとってどっちがトクか」を見つけよう！</p>
+    </div>
+
+    <div class="comparison-grid">
+        <div class="card en-daka-card">
+            <div class="card-title">
+                <span class="symbol">💪💴✨</span>
+                円高 (えんだか)
+                <span style="font-size: 1rem; color: #7f8c8d;">円のパワーが強い！</span>
+            </div>
+            
+            <div class="merit-demerit">
+                <span class="section-label merit-label">😊 うれしい！</span>
+                <ul>
+                    <li>海外旅行が安く行ける！</li>
+                    <li>iPhoneやブランド品が安くなる</li>
+                    <li>ガソリンや電気が安くなる</li>
+                </ul>
+
+                <span class="section-label demerit-label">😥 こまる...</span>
+                <ul>
+                    <li>日本の車が海外で売れにくい</li>
+                    <li>日本に来る観光客が減る</li>
+                    <li>輸出企業の利益が減る</li>
+                </ul>
+            </div>
+
+            <div class="character-box">
+                <div class="char"><span class="icon">✈️</span>旅行者</div>
+                <div class="char"><span class="icon">🍔</span>輸入業</div>
+            </div>
+        </div>
+
+        <div class="card en-yasu-card">
+            <div class="card-title">
+                <span class="symbol">🏃💨💴</span>
+                円安 (えんやす)
+                <span style="font-size: 1rem; color: #7f8c8d;">円のパワーが弱い...</span>
+            </div>
+
+            <div class="merit-demerit">
+                <span class="section-label merit-label">😊 うれしい！</span>
+                <ul>
+                    <li>トヨタなど輸出企業が儲かる</li>
+                    <li>外国人観光客がたくさん来る</li>
+                    <li>日本の景気が良くなりやすい</li>
+                </ul>
+
+                <span class="section-label demerit-label">😥 こまる...</span>
+                <ul>
+                    <li>輸入品の値上げ（食料・燃料）</li>
+                    <li>海外旅行が高すぎて行けない</li>
+                    <li>100円ショップの品数が減る!?</li>
+                </ul>
+            </div>
+
+            <div class="character-box">
+                <div class="char"><span class="icon">🚗</span>輸出企業</div>
+                <div class="char"><span class="icon">🏮</span>観光地</div>
+            </div>
+        </div>
+
+        <div class="summary-box">
+            <h3>⚖️ 結論：どっちが良いかは「立場」で決まる！</h3>
+            <p>日本は「物を輸入する力」と「物を輸出する力」の両方が必要です。<br>
+            <strong>「極端にどちらかに振れすぎないこと」</strong>が、みんなにとって一番心地よいバランスなのです。</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
