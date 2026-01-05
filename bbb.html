@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知性の地図 - なぜ学ぶのか</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --accent-color: #1a1a1a;
+            --sub-color: #717171;
+            --border-color: #e0e0e0;
+            --highlight: #0055ff;
+        }
+
+        body {
+            font-family: 'Inter', 'Shippori Mincho', serif;
+            background-color: var(--bg-color);
+            color: var(--accent-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrapper {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 20px;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 0.1em;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--sub-color);
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .section {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+            align-items: start;
+        }
+
+        .number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--border-color);
+            font-family: 'Inter', sans-serif;
+            line-height: 1;
+        }
+
+        .content h2 {
+            font-size: 1.6rem;
+            margin: 0 0 20px 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        .content h2::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--highlight);
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            color: #333;
+            text-align: justify;
+        }
+
+        .key-concept {
+            margin-top: 20px;
+            font-weight: 600;
+            color: var(--highlight);
+            display: flex;
+            align-items: center;
+        }
+
+        .key-concept::before {
+            content: "→";
+            margin-right: 10px;
+        }
+
+        footer {
+            margin-top: 100px;
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .final-message {
+            font-size: 1.4rem;
+            font-weight: 700;
+            font-family: 'Shippori Mincho', serif;
+        }
+
+        @media (max-width: 600px) {
+            .section { grid-template-columns: 1fr; gap: 10px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <h1>知性の地図を、広げる。</h1>
+        <div class="subtitle">なぜ私たちは学校という場所で学ぶのか</div>
+    </header>
+
+    <div class="section">
+        <div class="number">01</div>
+        <div class="content">
+            <h2>世界の解像度を上げる</h2>
+            <p>知識は、あなたの目に見える景色を鮮明にします。歴史を知れば街の風景が変わり、科学を知れば自然の凄さがわかります。学ぶことは、白黒の世界に色をつけていく作業です。</p>
+            <div class="key-concept">「知らない」という不安から自由になる</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="number">02</div>
+        <div class="content">
+            <h2>思考の独立を守る</h2>
+            <p>他人の意見を鵜呑みにせず、自分の頭で「何が正しいか」を判断する力。それは誰かに支配されないために最も必要な盾です。勉強は、あなたの尊厳を守るためにあります。</p>
+            <div class="key-concept">自分の人生のハンドルを自分で握る</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="number">03</div>
+        <div class="content">
+            <h2>未来の自分への投資</h2>
+            <p>今解いている数学や書いている作文は、脳の基礎体力を養っています。いつか「これをやりたい！」という情熱が見つかったとき、それを形にするための「地力」を今、蓄えています。</p>
+            <div class="key-concept">選択肢を、自分から捨てない</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="final-message">
+            勉強は、あなたを「よりあなたらしく」するためにある。
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
