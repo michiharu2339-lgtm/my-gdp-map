@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【2026年版】暗号資産の確定申告・完全攻略ガイド</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #eef2ff;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg: #f3f4f6;
+            --card: #ffffff;
+            --text-main: #1f2937;
+            --text-sub: #6b7280;
+        }
+
+        body {
+            font-family: "Hiragino Sans", "Meiryo", sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), #818cf8);
+            color: white;
+            padding: 30px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4);
+            margin-bottom: 30px;
+        }
+
+        .hero h1 { margin: 0; font-size: 1.8rem; letter-spacing: 0.05em; }
+        .hero p { margin: 10px 0 0; opacity: 0.9; font-weight: 500; }
+
+        /* セクション共通スタイル */
+        .section {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            background: var(--primary-light);
+            padding: 5px 10px;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        /* 1. ボーダーライン診断 */
+        .threshold-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .card {
+            border: 2px solid #f3f4f6;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+        .card.active { border-color: var(--primary); background: var(--primary-light); }
+
+        .job-label { font-size: 0.9rem; font-weight: bold; color: var(--text-sub); }
+        .amount { display: block; font-size: 1.8rem; font-weight: 900; color: var(--danger); margin: 8px 0; }
+        .note { font-size: 0.8rem; color: var(--text-sub); }
+
+        /* 2. 利益が発生するタイミング */
+        .timing-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .timing-tag {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            color: #92400e;
+            padding: 10px 15px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            flex: 1 1 calc(50% - 10px);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 3. 重要ルール（住民税） */
+        .rule-alert {
+            background: #fff1f2;
+            border-left: 6px solid var(--danger);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .rule-alert h4 { margin: 0 0 5px; color: #9f1239; }
+        .rule-alert p { margin: 0; font-size: 0.85rem; }
+
+        /* 4. アクションプラン */
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .todo-item:last-child { border-bottom: none; }
+        
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-top: 20px;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 600px) {
+            .threshold-grid { grid-template-columns: 1fr; }
+            .timing-tag { flex: 1 1 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="hero">
+        <h1>暗号資産 確定申告ガイド</h1>
+        <p>2025年分（2026年提出用）最新ルール対応</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title"><span>01</span> あなたは申告が必要？</div>
+        <div class="threshold-grid">
+            <div class="card active">
+                <div class="job-label">会社員・パート</div>
+                <div class="amount">20万円超</div>
+                <div class="note">副業などの利益合計</div>
+            </div>
+            <div class="card">
+                <div class="job-label">学生・主婦(夫)</div>
+                <div class="amount">58万円超</div>
+                <div class="note">★2025年から枠が拡大！</div>
+            </div>
+        </div>
+        <div class="rule-alert">
+            <h4>💡 注意：住民税の「1円ルール」</h4>
+            <p>所得税が0円でも、利益が1円でもあればお住まいの市区町村への報告が原則必要です。（でもパニックにならなくて大丈夫！）</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title"><span>02</span> 税金がかかる「瞬間」</div>
+        <div class="timing-container">
+            <div class="timing-tag">💰 円に換金した</div>
+            <div class="timing-tag">🔄 別のコインを買った</div>
+            <div class="timing-tag">🎨 NFTを購入した</div>
+            <div class="timing-tag">🎁 報酬をもらった</div>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-sub); margin-top: 15px; text-align: center;">
+            ※「日本円にしていないから大丈夫」は間違いなので注意！
+        </p>
+    </div>
+
+    <div class="section">
+        <div class="section-title"><span>03</span> 今すぐやるべき 3ステップ</div>
+        <div class="todo-item">
+            <div class="checkbox">1</div>
+            <div>
+                <strong>データの収集</strong><br>
+                <small>取引所から「年間取引報告書」やCSVをDLする</small>
+            </div>
+        </div>
+        <div class="todo-item">
+            <div class="checkbox">2</div>
+            <div>
+                <strong>ざっくり計算</strong><br>
+                <small>自動計算ツール（Cryptact等）にデータを入れる</small>
+            </div>
+        </div>
+        <div class="todo-item">
+            <div class="checkbox">3</div>
+            <div>
+                <strong>申告方法の決定</strong><br>
+                <small>スマホでe-Tax（自宅から送信）が一番おすすめ！</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        ※この図解は2025年1月時点の税制に基づいています。<br>
+        迷ったら「スマホで確定申告」で検索！
+    </div>
+</div>
+
+</body>
+</html>
