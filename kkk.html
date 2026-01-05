@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最強の新NISA図解ガイド</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --accent-color: #f5a623;
+            --success-color: #7ed321;
+            --danger-color: #ff5a5f;
+            --bg-color: #f0f4f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 { margin: 0; font-size: 2rem; }
+        .subtitle { font-size: 1.1rem; opacity: 0.9; }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-left: 6px solid var(--primary-color);
+            padding-left: 15px;
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        /* 1. 魔法の箱の図解 */
+        .box-comparison {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .box {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px dashed #ccc;
+        }
+
+        .nisa-box {
+            border-color: var(--accent-color);
+            background-color: #fffdf5;
+        }
+
+        .coin-icon { font-size: 3rem; margin-bottom: 10px; }
+
+        /* 2. お弁当箱の図解 */
+        .bento-container {
+            background: #fff5e6;
+            border: 10px solid #8b4513;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .bento-side {
+            flex: 1;
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .side-tsumitate { background-color: #27ae60; }
+        .side-seicho { background-color: #e67e22; }
+
+        .bento-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.3);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* 3. リスクの図解（雪だるま） */
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .risk-item {
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 15px;
+        }
+
+        .big-icon { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+
+        /* 4. 手順のリスト */
+        .step-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background: #edf2f7;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .step-num {
+            background: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            .bento-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>新NISAまるわかり図解</h1>
+        <p class="subtitle">未来のお金を守って育てる「魔法の箱」</p>
+    </header>
+
+    <section class="section">
+        <h2>① NISAは「魔法の箱」</h2>
+        <p>投資で儲かったお金に<strong>税金（20%）がかからない</strong>特別な仕組みです。</p>
+        <div class="box-comparison">
+            <div class="box">
+                <div class="coin-icon">🏦</div>
+                <strong>ふつうの口座</strong>
+                <p>1万円儲かっても…<br><span style="color:var(--danger-color); font-weight:bold;">2,000円が税金</span><br>手元には 8,000円</p>
+            </div>
+            <div class="box nisa-box">
+                <div class="coin-icon">✨</div>
+                <strong>NISAの箱</strong>
+                <p>1万円儲かったら…<br><span style="color:var(--success-color); font-weight:bold;">0円（ぜんぶ自分のもの）</span><br>手元に 10,000円！</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>② 中身は「お弁当箱」のイメージ</h2>
+        <p>性格の違う2つの枠を使い分けるのがコツです。</p>
+        <div class="bento-container">
+            <div class="bento-side side-tsumitate">
+                <span class="bento-tag">初心者向け・コツコツ</span>
+                <h3>🍚 つみたて投資枠</h3>
+                <p><strong>「栄養満点の主食」</strong></p>
+                <ul>
+                    <li>国が認めた優良メニュー</li>
+                    <li>自動で少しずつ買う</li>
+                    <li>長く続けるのに最適</li>
+                </ul>
+            </div>
+            <div class="bento-side side-seicho">
+                <span class="bento-tag">自由度が高い・こだわり</span>
+                <h3>🍗 成長投資枠</h3>
+                <p><strong>「好きなおかず」</strong></p>
+                <ul>
+                    <li>自分の好きな株を選べる</li>
+                    <li>好きなタイミングで買える</li>
+                    <li>ちょっと冒険もできる</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>③ 大切なのは「3つのコツ」</h2>
+        <p>一時的に減ることはあっても、この方法なら怖くない！</p>
+        <div class="risk-grid">
+            <div class="risk-item">
+                <span class="big-icon">⏳</span>
+                <strong>長く待つ</strong>
+                <p>15年以上続けるとプラスになりやすい</p>
+            </div>
+            <div class="risk-item">
+                <span class="big-icon">🌍</span>
+                <strong>分けて買う</strong>
+                <p>世界中の会社にバラバラに投資する</p>
+            </div>
+            <div class="risk-item">
+                <span class="big-icon">☃️</span>
+                <strong>コツコツ</strong>
+                <p>お金がお金を生む「雪だるま式」を狙う</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>④ 親に教える「3ステップ」</h2>
+        <div class="step-list">
+            <div class="step-item">
+                <div class="step-num">1</div>
+                <div><strong>「ネット証券」で検索！</strong>（楽天やSBIがスマホで楽だよ）</div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">2</div>
+                <div><strong>「月1,000円」から試そう！</strong>（無理ない範囲が一番）</div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">3</div>
+                <div><strong>「全世界株」を選ぼう！</strong>（世界中を応援する王道コース）</div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
