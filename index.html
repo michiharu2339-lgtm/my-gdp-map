@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年日本経済図解ガイド</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --card-bg: #ffffff;
+            --primary-blue: #2563eb;
+            --sunny-yellow: #fbbf24;
+            --cloudy-gray: #94a3b8;
+            --danger-red: #ef4444;
+            --success-green: #22c55e;
+            --text-main: #1e293b;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 結論ヘッダー */
+        .header-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header-card h1 {
+            font-size: 1.2rem;
+            margin: 0 0 10px 0;
+            opacity: 0.9;
+        }
+
+        .header-card p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* メインコンテンツ */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+        }
+
+        .card-title i {
+            margin-right: 10px;
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+        }
+
+        .status-box {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .weather-icon {
+            font-size: 2.5rem;
+            color: var(--cloudy-gray);
+            margin-bottom: 5px;
+        }
+
+        /* メリット・リスクのスタイル */
+        .point-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .point {
+            flex: 1;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .merit { background-color: #f0fdf4; border-left: 4px solid var(--success-green); }
+        .risk { background-color: #fef2f2; border-left: 4px solid var(--danger-red); }
+
+        .point-title {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* アドバイスセクション */
+        .advice-card {
+            grid-column: 1 / -1;
+            background: #fff7ed;
+            border: 2px dashed #fb923c;
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        .advice-title {
+            color: #c2410c;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .advice-title i { margin-right: 10px; }
+
+        .rank-badge {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #475569;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-card">
+        <h1>2026年1月：日本経済の現在地</h1>
+        <p>「長い冬が終わり、春の兆しは見えてきたけれど、<br>まだコートが手放せない状態」</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <div class="card-title"><i class="fas fa-cloud-sun"></i>今の景気は？</div>
+            <div class="status-box">
+                <div class="weather-icon"><i class="fas fa-cloud"></i></div>
+                <strong>ステータス：くもり</strong>
+                <div style="font-size: 0.8rem; color: #64748b;">実質GDP成長率 約+0.8%</div>
+            </div>
+            <div class="point-box">
+                <div class="point merit">
+                    <span class="point-title">メリット</span>
+                    企業の投資が活発。ロボット導入などで効率化！
+                </div>
+            </div>
+            <div class="point-box">
+                <div class="point risk">
+                    <span class="point-title">リスク</span>
+                    海外の景気が悪くなると、すぐに雨になる心配。
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title"><i class="fas fa-wallet"></i>お財布の状況</div>
+            <div class="status-box">
+                <i class="fas fa-arrows-up-down" style="font-size: 2rem; color: #2563eb; margin-bottom: 10px;"></i><br>
+                <strong>賃金 vs 物価の追いかけっこ</strong>
+                <div style="font-size: 0.8rem; color: #64748b;">実質賃金プラス化の境目</div>
+            </div>
+            <div class="point-box">
+                <div class="point merit">
+                    <span class="point-title">メリット</span>
+                    5%以上の賃上げが広がり、買い物しやすくなる。
+                </div>
+            </div>
+            <div class="point-box">
+                <div class="point risk">
+                    <span class="point-title">リスク</span>
+                    円安で輸入品が高騰。給料UP分が消える可能性。
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title"><i class="fas fa-landmark"></i>政府・日銀の動き</div>
+            <div class="status-box">
+                <i class="fas fa-gauge-high" style="font-size: 2rem; color: #f59e0b; margin-bottom: 10px;"></i><br>
+                <strong>金利 0.75% 前後</strong>
+                <div style="font-size: 0.8rem; color: #64748b;">アクセルとブレーキを調整中</div>
+            </div>
+            <div class="point-box">
+                <div class="point merit">
+                    <span class="point-title">メリット</span>
+                    預金の利息が増える！政府の給付金も期待。
+                </div>
+            </div>
+            <div class="point-box">
+                <div class="point risk">
+                    <span class="point-title">リスク</span>
+                    住宅ローンの返済額が増えるプレッシャー。
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title"><i class="fas fa-globe-americas"></i>世界の立ち位置</div>
+            <div class="status-box">
+                <div style="font-size: 1.5rem; font-weight: bold; color: #64748b;">世界 <span style="color: #1e293b; font-size: 2rem;">5</span> 位</div>
+                <div style="font-size: 0.8rem; color: #64748b;">インドに抜かれる予測</div>
+            </div>
+            <div class="point-box">
+                <div class="point merit">
+                    <span class="point-title">メリット</span>
+                    日本の高い技術力は世界でまだ大人気。
+                </div>
+            </div>
+            <div class="point-box">
+                <div class="point risk">
+                    <span class="point-title">リスク</span>
+                    米国の関税引き上げで輸出が厳しくなる恐れ。
+                </div>
+            </div>
+        </div>
+
+        <div class="advice-card">
+            <div class="advice-title"><i class="fas fa-lightbulb"></i>今、私たちがすべきこと</div>
+            <p style="margin: 0; font-size: 1rem;">
+                <strong>「お金に働いてもらう（投資）」と「自分のスキルを磨く」の二刀流で！</strong><br>
+                銀行に預けるだけでなくNISAなどで分散投資し、同時に自分自身の「稼ぐ力」を高める準備をしましょう。
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
