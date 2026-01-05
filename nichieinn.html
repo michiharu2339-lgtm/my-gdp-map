@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本銀行のひみつ図解</title>
+    <style>
+        :root {
+            --main-blue: #00429d;
+            --accent-gold: #c5a059;
+            --bg-light: #f4f7f9;
+            --text-dark: #333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--main-blue);
+            border-bottom: 4px solid var(--accent-gold);
+            display: inline-block;
+            width: 100%;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        /* 1. 全体像セクション */
+        .overview {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: #eef2f7;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .bank-box {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: var(--accent-gold);
+        }
+
+        /* 2. 3つの役割セクション */
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .role-card {
+            border: 2px solid var(--main-blue);
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .role-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,66,157,0.2);
+        }
+
+        .role-card h3 {
+            margin-top: 0;
+            color: var(--main-blue);
+            font-size: 1.2rem;
+            border-left: 5px solid var(--accent-gold);
+            padding-left: 10px;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* 3. 物価の番人セクション */
+        .guardian-section {
+            background: linear-gradient(135deg, #00429d 0%, #002b66 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .balance-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 20px;
+        }
+
+        .balance-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        /* 4. 金利のブレーキ・アクセル */
+        .interest-section {
+            border: 2px dashed var(--accent-gold);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .brake, .accel {
+            width: 45%;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .brake { background-color: #ffdce0; color: #d32f2f; border: 1px solid #d32f2f; }
+        .accel { background-color: #e3f2fd; color: #1976d2; border: 1px solid #1976d2; }
+
+        .mamechishiki {
+            margin-top: 40px;
+            background: #fff9c4;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 10px solid #fbc02d;
+        }
+
+        @media (max-width: 600px) {
+            .overview, .balance-container, .controls {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .brake, .accel { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🏦 日本銀行（日銀）ってなに？</h1>
+
+    <section>
+        <h2>1. 日本経済の司令塔！</h2>
+        <div class="overview">
+            <div class="bank-box">
+                <span class="icon">👨‍👩‍👧‍👦</span>
+                <strong>わたしたち</strong>
+            </div>
+            <div class="arrow">⇄</div>
+            <div class="bank-box">
+                <span class="icon">🏢</span>
+                <strong>普通の銀行</strong><br><small>(お店)</small>
+            </div>
+            <div class="arrow">⇄</div>
+            <div class="bank-box">
+                <span class="icon">🏛️</span>
+                <strong>日本銀行</strong><br><small>(銀行の銀行)</small>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>2. 3つのすごい顔</h2>
+        <div class="roles-grid">
+            <div class="role-card">
+                <span class="icon">💴</span>
+                <h3>発券銀行</h3>
+                <p>お札に「命」を吹き込む！世の中に出回るお札の量をコントロールしています。</p>
+            </div>
+            <div class="role-card">
+                <span class="icon">🏦</span>
+                <h3>銀行の銀行</h3>
+                <p>普通の銀行がお金を預ける場所。銀行同士の巨大な取引を支えます。</p>
+            </div>
+            <div class="role-card">
+                <span class="icon">🇯🇵</span>
+                <h3>政府の銀行</h3>
+                <p>国のお財布（税金など）を管理する金庫番の役割です。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="guardian-section">
+        <h2>3. 物価の番人（温度調節係）</h2>
+        <p>お金が増えすぎても、減りすぎてもダメ！ちょうどいいバランスを守ります。</p>
+        <div class="balance-container">
+            <div class="balance-item">
+                <strong>お金が多すぎ！</strong><br>
+                🔥 物価が上がりすぎる<br>(インフレ)
+            </div>
+            <div class="balance-item">
+                <span style="font-size: 2rem;">⚖️</span><br>
+                <strong>ちょうどいい！</strong>
+            </div>
+            <div class="balance-item">
+                <strong>お金が少なすぎ！</strong><br>
+                ❄️ 景気が悪くなる<br>(デフレ)
+            </div>
+        </div>
+    </section>
+
+    <section class="interest-section">
+        <h2>4. ニュースで聞く「金利」って？</h2>
+        <div class="controls">
+            <div class="brake">
+                <strong>🛑 金利を上げる（ブレーキ）</strong><br>
+                <small>景気が熱すぎるとき。お金を借りにくくして、物価上昇を抑える！</small>
+            </div>
+            <div class="accel">
+                <strong>🚀 金利を下げる（アクセル）</strong><br>
+                <small>景気を良くしたいとき。お金を借りやすくして、世の中を元気にする！</small>
+            </div>
+        </div>
+    </section>
+
+    <div class="mamechishiki">
+        <strong>💡 豆知識：お札のゆくえ</strong><br>
+        古くなったお札は日銀で細かく裁断され、最後は「トイレットペーパー」や「封筒」にリサイクルされるんだよ！
+    </div>
+</div>
+
+</body>
+</html>
