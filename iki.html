@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --income-tax-color: #ff6b6b;
+            --resident-tax-color: #4da3ff;
+            --accent-yellow: #ffd93d;
+            --text-dark: #2d3436;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            border-bottom: 4px solid var(--accent-yellow);
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        /* 比較テーブルのスタイル */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 15px;
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .category-label {
+            background: #eee;
+            font-weight: bold;
+            width: 25%;
+        }
+
+        .income-tax-cell {
+            background-color: #fff5f5;
+            border: 2px solid var(--income-tax-color);
+            width: 37.5%;
+        }
+
+        .resident-tax-cell {
+            background-color: #f0f7ff;
+            border: 2px solid var(--resident-tax-color);
+            width: 37.5%;
+        }
+
+        .tax-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .bg-red { background-color: var(--income-tax-color); }
+        .bg-blue { background-color: var(--resident-tax-color); }
+
+        /* 「いつ払うか」のタイムライン図解 */
+        .timeline-box {
+            background: #fffbeb;
+            border: 2px dashed #d97706;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .timeline-flex {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .arrow {
+            font-size: 2em;
+            color: #d97706;
+        }
+
+        /* 身近な税金チップス */
+        .other-taxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .tax-chip {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .tax-chip span {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+
+        .summary-card {
+            background: #2d3436;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .summary-card h3 {
+            color: var(--accent-yellow);
+            margin-top: 0;
+        }
+
+        @media (max-width: 600px) {
+            .comparison-table, .timeline-flex {
+                display: block;
+            }
+            .income-tax-cell, .resident-tax-cell, .category-label {
+                width: 100%;
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>所得税と住民税のちがい</h1>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th class="income-tax-cell">
+                    <span class="badge bg-red">国のサイフへ</span>
+                    <span class="tax-name">所得税</span>
+                </th>
+                <th class="resident-tax-cell">
+                    <span class="badge bg-blue">地域のサイフへ</span>
+                    <span class="tax-name">住民税</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="category-label">どこへ？</td>
+                <td class="income-tax-cell"><strong>日本（国）</strong><br><small>警察・教科書・防衛など</small></td>
+                <td class="resident-tax-cell"><strong>都道府県・市区町村</strong><br><small>ゴミ・公園・図書館など</small></td>
+            </tr>
+            <tr>
+                <td class="category-label">計算ルール</td>
+                <td class="income-tax-cell"><strong>階段アップ方式</strong><br><small>稼ぐほど％が高くなる</small></td>
+                <td class="resident-tax-cell"><strong>みんな一律方式</strong><br><small>だいたい一律10％</small></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="timeline-box">
+        <h3>⏰ 「いつの分」を払うかが大ちがい！</h3>
+        <div class="timeline-flex">
+            <div>
+                <strong>2025年（去年）</strong><br>
+                <span>たくさん働いた！</span>
+            </div>
+            <div class="arrow">➡</div>
+            <div>
+                <strong>2026年（今年）</strong><br>
+                <div class="badge bg-red" style="margin-bottom: 5px;">所得税は今！</div><br>
+                <div class="badge bg-blue">住民税は去年の分！</div>
+            </div>
+        </div>
+        <p style="font-size: 0.9em; color: #666; margin-top: 15px;">
+            ※新入社員が2年目から「お小遣いが減った…」と泣くのはこのせいです！
+        </p>
+    </div>
+
+    <div class="other-taxes">
+        <div class="tax-chip"><span>🛍️</span> 消費税</div>
+        <div class="tax-chip"><span>🍺</span> お酒の税</div>
+        <div class="tax-chip"><span>⛽</span> ガソリンの税</div>
+        <div class="tax-chip"><span>♨️</span> 温泉の税（入湯税）</div>
+    </div>
+
+    <div class="summary-card">
+        <h3>📝 3行まとめ</h3>
+        <ul>
+            <li>所得税は「今の稼ぎ」から国へ！ 住民税は「去年の稼ぎ」から地域へ！</li>
+            <li>住民税は1年遅れでやってくるから、2年目の大人は要注意！</li>
+            <li>お買い物も温泉も、世の中は税金の仕組みで支えられている！</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
