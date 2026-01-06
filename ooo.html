@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>複利の魔法 - 中学生向け解説</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFD700;
+            --secondary: #00BFFF;
+            --accent: #FF6347;
+            --bg: #F0F4F8;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-bottom: 4px solid var(--primary);
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* 1. 比較シミュレーション */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .tanri { background: #e3f2fd; border: 2px solid var(--secondary); }
+        .fukuri { background: #fffde7; border: 2px solid var(--primary); }
+
+        .amount-bar {
+            height: 20px;
+            background: #ddd;
+            border-radius: 10px;
+            margin: 10px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .fill {
+            height: 100%;
+            transition: width 1s ease-in-out;
+        }
+
+        .tanri .fill { background: var(--secondary); width: 60%; }
+        .fukuri .fill { background: var(--primary); width: 85%; }
+
+        /* 2. 雪だるまセクション */
+        .snow-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .snowball-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 120px;
+            margin-top: 20px;
+        }
+
+        .snowball {
+            background: white;
+            border-radius: 50%;
+            box-shadow: inset -5px -5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .s1 { width: 30px; height: 30px; }
+        .s2 { width: 60px; height: 60px; }
+        .s3 { width: 100px; height: 100px; animation: glow 2s infinite alternate; }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 5px #fff; }
+            to { box-shadow: 0 0 20px var(--primary); }
+        }
+
+        /* 3. アインシュタインの名言 */
+        .quote {
+            background: #2c3e50;
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            position: relative;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .quote::before {
+            content: "“";
+            font-size: 5rem;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.2;
+        }
+
+        /* 4. 72の法則 */
+        .law-72 {
+            background: var(--accent);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-size: 2.5rem;
+            margin: 15px 0;
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .footer-msg {
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>✨ 複利（ふくり）の魔法ガイド ✨</h1>
+
+    <div class="comparison">
+        <div class="card tanri">
+            <h3>単利 (たんり)</h3>
+            <p>毎年「同じ分」だけ増える</p>
+            <div class="amount-bar"><div class="fill" style="width: 40%"></div></div>
+            <p>100→110→120→130...</p>
+            <small>ずっと時給が変わらないイメージ</small>
+        </div>
+        <div class="card fukuri">
+            <h3>複利 (ふくり)</h3>
+            <p>増えた分が「次の子」を産む</p>
+            <div class="amount-bar"><div class="fill" style="width: 70%"></div></div>
+            <p>100→110→121→133...</p>
+            <small>雪だるま式にドンドン加速！</small>
+        </div>
+    </div>
+
+    <div class="snow-section">
+        <h3>⛄️ 雪だるまの正体</h3>
+        <p>最初は小さくても、大きくなると一回転でつく雪の量が激増する！</p>
+        <div class="snowball-container">
+            <div><div class="snowball s1"></div><p>1年目</p></div>
+            <div><div class="snowball s2"></div><p>10年目</p></div>
+            <div><div class="snowball s3"></div><p>30年目！</p></div>
+        </div>
+    </div>
+
+    <div class="quote">
+        <p>「複利は、人類最大の発明だ。知っている人は複利で稼ぎ、知らない人は利息を払う。」</p>
+        <cite>— アルベルト・アインシュタイン</cite>
+    </div>
+
+    <div class="law-72">
+        <div>💡 お金が2倍になる期間がわかる</div>
+        <div class="formula">72 ÷ 金利(%) ＝ 年数</div>
+        <p style="font-size: 1rem">例：6%で運用したら 72÷6＝12年で2倍！</p>
+    </div>
+
+    <p class="footer-msg">🚀 早く始めた人ほど、魔法の力は大きくなるよ！</p>
+</div>
+
+</body>
+</html>
