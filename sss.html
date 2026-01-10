@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --stock-color: #ff4757;
+            --economy-color: #2f3542;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--economy-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2f3542;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--stock-color);
+            display: inline-block;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        /* メイン比較セクション */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card.stock { border-top: 8px solid var(--stock-color); }
+        .card.economy { border-top: 8px solid #1e90ff; }
+
+        .label {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .emoji {
+            font-size: 3rem;
+            margin: 15px 0;
+            display: block;
+        }
+
+        .tagline {
+            background: #eee;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .stock .tagline { color: var(--stock-color); background: #ffeaea; }
+        .economy .tagline { color: #1e90ff; background: #e1f0ff; }
+
+        /* 理由セクション */
+        .reason-box {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .reason-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #57606f;
+        }
+
+        .reason-title span {
+            background: var(--economy-color);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .example-ui {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px dashed #ccc;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            color: #ccc;
+        }
+
+        /* 物価高の図解 */
+        .inflation-ui {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .bar {
+            height: 20px;
+            border-radius: 10px;
+            transition: width 1s;
+        }
+        .salary-bar { background: #2ed573; width: 60%; }
+        .price-bar { background: #ffa502; width: 85%; }
+
+        @media (max-width: 600px) {
+            .comparison-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📈 株価と景気が「ズレる」のはなぜ？</h1>
+
+    <div class="comparison-grid">
+        <div class="card stock">
+            <span class="tagline">未来への期待</span>
+            <span class="label">株価</span>
+            <span class="emoji">🚀</span>
+            <p><strong>「予習・噂」</strong><br>次はもっと良くなるはず！というみんなの予想</p>
+        </div>
+
+        <div class="card economy">
+            <span class="tagline">今の実力</span>
+            <span class="label">景気</span>
+            <span class="emoji">📋</span>
+            <p><strong>「通知表・結果」</strong><br>実際に給料が増えた、物が買えたという今の結果</p>
+        </div>
+    </div>
+
+    <div class="reason-box">
+        <div class="reason-title"><span>1</span> 時間のズレ（期待が先！）</div>
+        <div class="example-ui">
+            <div>🏃‍♂️ <strong>株価</strong><br><small>先に走り出す</small></div>
+            <div class="arrow">➡️</div>
+            <div style="opacity: 0.5;">🚶‍♂️ <strong>景気</strong><br><small>後からついてくる</small></div>
+        </div>
+        <p style="font-size: 0.9rem; margin-top:10px;">「テスト勉強を始めた（株価）」から「良い点数がつく（景気）」までには時間がかかります。</p>
+    </div>
+
+    <div class="reason-box">
+        <div class="reason-title"><span>2</span> 場所のズレ（一部だけ！）</div>
+        <div style="text-align: center; padding: 10px;">
+            <div style="font-size: 1.5rem;">👑 🏢 🏢 <span style="font-size: 1rem; color: #999;">🏠 🏪 🏫 📉</span></div>
+            <p style="font-size: 0.9rem; color: #666;">
+                超エリート企業の成績（株価）だけで<br>平均点が上がっている状態。
+            </p>
+        </div>
+    </div>
+
+    <div class="reason-box">
+        <div class="reason-title"><span>3</span> 物価の壁（買えない！）</div>
+        <div class="inflation-ui">
+            <div class="bar-row">
+                <span style="width: 80px; font-size: 0.8rem;">給料のUP</span>
+                <div class="bar salary-bar"></div>
+            </div>
+            <div class="bar-row">
+                <span style="width: 80px; font-size: 0.8rem;">物価のUP</span>
+                <div class="bar price-bar"></div>
+            </div>
+        </div>
+        <p style="font-size: 0.9rem; margin-top:10px; color: #e44d26;">
+            <strong>給料より物価の方が高く上がっている</strong>ので、<br>お財布は苦しくなっています。
+        </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; font-weight: bold; color: #57606f;">
+        💡 結論：給料が「物価」を追い越せば、暮らしは良くなる！
+    </div>
+</div>
+
+</body>
+</html>
