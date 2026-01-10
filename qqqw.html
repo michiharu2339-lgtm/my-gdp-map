@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clusterってなに？最強図解ガイド</title>
+    <style>
+        :root {
+            --main-blue: #007bff;
+            --accent-pink: #ff007b;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-white: #f8fafc;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 0 10px rgba(0,210,255,0.3));
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--main-blue);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            color: #00d2ff;
+        }
+
+        .card h2 span {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-pink);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .visual-box {
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 4px solid var(--main-blue);
+        }
+
+        .icon-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .icon-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .icon-list li::before {
+            content: "✦";
+            color: var(--accent-pink);
+            margin-right: 10px;
+        }
+
+        /* 比較表スタイル */
+        .device-compare {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .device-item {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .device-icon {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #334155;
+            width: 100%;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 500px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🚀 cluster まるわかりガイド</h1>
+
+    <div class="grid">
+        <div class="card">
+            <span class="badge">POINT 01</span>
+            <h2><span>🏠</span>魔法の「たまり場」</h2>
+            <p>学校や家とはちがう、インターネット上の第3の居場所！</p>
+            <div class="visual-box">
+                <ul class="icon-list">
+                    <li><strong>距離ゼロ：</strong> どんなに遠くの友達とも一瞬で集合！</li>
+                    <li><strong>校則ゼロ：</strong> 好きな服、好きな姿（アバター）でOK。</li>
+                    <li><strong>場所自由：</strong> 今日は宇宙のカフェ、明日は南の島。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="badge">POINT 02</span>
+            <h2><span>🎮</span>アバターで「体験」</h2>
+            <p>見るだけじゃない、自分がその世界に入って遊べる！</p>
+            <div class="visual-box">
+                <ul class="icon-list">
+                    <li><strong>遊ぶ：</strong> アスレチックや脱出ゲームに挑戦！</li>
+                    <li><strong>騒ぐ：</strong> VTuberライブでペンライトを振る。</li>
+                    <li><strong>稼ぐ：</strong> 自分で作ったアイテムを売ることも可能。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="badge">POINT 03</span>
+            <h2><span>📱</span>必要な「道具」</h2>
+            <p>高い機材はいらない！今すぐ始められるハードルの低さ。</p>
+            <div class="device-compare">
+                <div class="device-item">
+                    <div class="device-icon">📱</div>
+                    <strong>スマホ</strong><br>手軽さNo.1
+                </div>
+                <div class="device-item">
+                    <div class="device-icon">💻</div>
+                    <strong>PC</strong><br>画面が広い
+                </div>
+                <div class="device-item" style="opacity: 0.6;">
+                    <div class="device-icon">🥽</div>
+                    <strong>VRゴーグル</strong><br>あれば最強
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 0.9rem; margin-top: 15px; color: #94a3b8;">
+                ※半分以上の人がスマホやPCで遊んでいるよ！
+            </p>
+        </div>
+
+        <div class="card">
+            <span class="badge">POINT 04</span>
+            <h2><span>🛠️</span>ワールドを「作る」</h2>
+            <p>遊ぶ側から、世界を創る神様（クリエイター）へ！</p>
+            <div class="visual-box">
+                <ul class="icon-list">
+                    <li><strong>スマホで：</strong> 家具を置く感覚で部屋作り。</li>
+                    <li><strong>PCで：</strong> 本気を出せばプロ級のゲーム作り。</li>
+                    <li><strong>公開：</strong> 誰かに遊びに来てもらう喜び！</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>まずは好きなワールドを「お散歩」することから始めてみよう！</p>
+    </div>
+</div>
+
+</body>
+</html>
