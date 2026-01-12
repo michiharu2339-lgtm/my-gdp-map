@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style>
+    /* 全体の設定：文字を圧倒的に大きく */
+    .tax-atlas {
+        font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+        background-color: #f0f2f5;
+        padding: 40px 20px;
+        color: #222;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    /* メインタイトル */
+    .main-title {
+        font-size: 52px; /* 超特大 */
+        text-align: center;
+        background: linear-gradient(transparent 70%, #ffdf1e 70%);
+        display: block;
+        margin-bottom: 50px;
+        font-weight: 900;
+    }
+
+    /* カテゴリごとの大きな塊 */
+    .section-box {
+        background: white;
+        border-radius: 30px;
+        padding: 40px;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border: 4px solid #eee;
+    }
+
+    /* カテゴリ見出し */
+    .section-header {
+        font-size: 38px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        border-left: 15px solid #3498db;
+        padding-left: 20px;
+    }
+
+    /* 各税金のカード */
+    .tax-card {
+        background: #f8f9fa;
+        border-radius: 20px;
+        padding: 25px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid #e9ecef;
+    }
+
+    /* 税金の名前 */
+    .tax-name-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .tax-name {
+        font-size: 32px;
+        font-weight: 900;
+        color: #1a73e8;
+    }
+
+    /* どこに払うかのバッジ */
+    .dest-badge {
+        font-size: 20px;
+        padding: 8px 15px;
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+    }
+    .kuni { background-color: #ff5252; } /* 国税 */
+    .chiho { background-color: #448aff; } /* 地方税 */
+    .ryoho { background: linear-gradient(90deg, #ff5252, #448aff); }
+
+    /* 説明文（ここも大きく） */
+    .tax-info {
+        font-size: 24px;
+        line-height: 1.5;
+        color: #444;
+    }
+
+    /* 特殊な枠（社会保険など） */
+    .warning-box {
+        background-color: #fff9c4;
+        border: 5px dashed #fbc02d;
+        border-radius: 30px;
+        padding: 40px;
+    }
+
+    .warning-title {
+        font-size: 34px;
+        color: #f57f17;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* 色のバリエーション */
+    .c-blue { border-left-color: #3498db; }
+    .c-green { border-left-color: #2ecc71; }
+    .c-orange { border-left-color: #e67e22; }
+    .c-purple { border-left-color: #9b59b6; }
+
+    @media (max-width: 600px) {
+        .main-title { font-size: 36px; }
+        .section-header { font-size: 28px; }
+        .tax-name { font-size: 26px; }
+        .tax-info { font-size: 20px; }
+    }
+</style>
+</head>
+<body>
+
+<div class="tax-atlas">
+    <h1 class="main-title">💰 日本の税金ぜんぶ図解</h1>
+
+    <div class="section-box c-blue">
+        <div class="section-header">🛒 暮らし・買い物</div>
+        
+        <div class="tax-card">
+            <div class="tax-name-row">
+                <span class="tax-name">消費税</span>
+                <span class="dest-badge ryoho">国 ＋ 地方</span>
+            </div>
+            <div class="tax-info">
+                お店で払うおなじみの税金。お年寄りや子供たちの生活を支えるために使われます。
+            </div>
+        </div>
+
+        <div class="tax-card">
+            <div class="tax-name-row">
+                <span class="tax-name">酒税・たばこ税</span>
+                <span class="dest-badge kuni">国</span>
+            </div>
+            <div class="tax-info">
+                お酒やたばこにかかる税金。ちょっと贅沢なもの（嗜好品）から多めに取ります。
+            </div>
+        </div>
+
+        <div class="tax-card">
+            <div class="tax-name-row">
+                <span class="tax-name">入湯税</span>
+                <span class="dest-badge chiho">地方</span>
+            </div>
+            <div class="tax-info">
+                温泉に入るときに払う「150円」。温泉街の掃除や、火事から守るために使われます。
+            </div>
+        </div>
+    </div>
+
+    <div class="section-box c-green">
+        <div class="section-header">👔 仕事・お金を稼ぐ</div>
+        
+        <div class="tax-card">
+            <div class="tax-name-row">
+                <span class="tax-name">所得税</span>
+                <span class="dest-badge kuni">国</span>
+            </div>
+            <div class="tax-info">
+                働いて稼いだお給料にかかる。稼ぎが大きい人ほど「割合」が高くなるルールです。
+            </div>
+        </div>
+
+        <div class="tax-card">
+            <div class="tax-name-row">
+                <span class="tax-name">住民税</span>
+                <span class="dest-badge chiho">地方</span>
+            </div>
+            <div class="tax-info">
+                住んでいる街に払う「会費」。ゴミ回収、学校、消防など身近なことに使われます。
+            </div>
+        </div>
+
+        <div class="tax-card">
+            <div class="tax-name-row">
+                <span class="tax-name">法人税</span>
+                <span class="dest-badge kuni">国</span>
+            </div>
+            <div class="tax-info">
+                「会社」が稼いだ時に払う税金。会社版の所得税です。
+            </div>
+        </div>
+    </div>
+
+    <div class="section-box c-orange">
+        <div class="section-header">🏠 持ち物（家・車）</div>
+        
+        <div class="tax-card">
+            <div class="tax-name-row">
+                <span class="tax-name">固定資産税</span>
+                <span class="dest-badge chiho">地方</span>
+            </div>
+            <div class="tax-info">
+                マイホームや土地を持っているだけで、毎年かかる税金です。
+            </div>
+        </div>
+
+        <div class="tax-card">
+            <div class="tax-name-row">
+                <span class="tax-name">自動車税</span>
+                <span class="dest-badge chiho">地方</span>
+            </div>
+            <div class="tax-info">
+                車を持っている人が毎年払う。排気量（エンジンの大きさ）で値段が変わります。
+            </div>
+        </div>
+    </div>
+
+    <div class="section-box c-purple">
+        <div class="section-header">🎁 引き継ぐ・もらう</div>
+        
+        <div class="tax-card">
+            <div class="tax-name-row">
+                <span class="tax-name">相続税</span>
+                <span class="dest-badge kuni">国</span>
+            </div>
+            <div class="tax-info">
+                亡くなった家族から、たくさんのお金や土地を引き継いだときにかかります。
+            </div>
+        </div>
+
+        <div class="tax-card">
+            <div class="tax-name-row">
+                <span class="tax-name">贈与税</span>
+                <span class="dest-badge kuni">国</span>
+            </div>
+            <div class="tax-info">
+                生きている人から「これあげる！」と高いプレゼントやお金をもらったときにかかります。
+            </div>
+        </div>
+    </div>
+
+    <div class="warning-box">
+        <div class="warning-title">⚠️ 税金じゃないけど大事なもの</div>
+        
+        <div class="tax-card">
+            <div class="tax-name-row">
+                <span class="tax-name">社会保険料</span>
+                <span class="dest-badge" style="background-color: #f57f17;">お財布から自動引き去り</span>
+            </div>
+            <div class="tax-info">
+                ・<b>健康保険</b>：病院代を安くするため<br>
+                ・<b>年金</b>：お年寄りの生活を支えるため<br>
+                名前は税金じゃないけれど、義務なので「実質的な税金」と言われます。
+            </div>
+        </div>
+
+        <div class="tax-card">
+            <div class="tax-name-row">
+                <span class="tax-name">走行税（検討中）</span>
+            </div>
+            <div class="tax-info">
+                電気自動車が増えると「ガソリンの税金」が入らなくなるため、将来「走った距離」で税金を取る検討がされています。
+            </div>
+        </div>
+    </div>
+
+    <p style="text-align: center; font-size: 24px; margin-top: 40px; color: #666;">
+        日本の税金は全部で約50種類！<br>
+        「みんなの安心・安全」を買うための共通のお財布なんです。
+    </p>
+</div>
+
+</body>
+</html>
