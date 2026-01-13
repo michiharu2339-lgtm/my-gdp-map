@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国会システム解析：衆議院 vs 参議院</title>
+    <style>
+        :root {
+            --bg-main: #ffffff;
+            --bg-sub: #f5f5f7;
+            --accent-blue: #0071e3; /* 衆議院：誠実・スピード */
+            --accent-green: #34c759; /* 参議院：安定・調和 */
+            --text-main: #1d1d1f;
+            --text-sub: #86868b;
+            --border: #d2d2d7;
+            --card-shadow: 0 8px 24px rgba(0,0,0,0.04);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* ヘッダー */
+        header {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 60px;
+        }
+
+        .badge {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+
+        /* セクション共通 */
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .num {
+            background: var(--text-main);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .card {
+            background: var(--bg-sub);
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* 存在意義の図解 */
+        .system-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .flow-item {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* 衆参比較表/カード */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .comp-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: transform 0.2s;
+        }
+
+        .comp-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+        }
+
+        .label {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .label-blue { background: #e8f2ff; color: var(--accent-blue); }
+        .label-green { background: #eaf9ee; color: var(--accent-green); }
+
+        /* パワーバランス図解 */
+        .power-visual {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .bar-container {
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            margin: 10px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        /* もし片方がなかったら（シナリオ） */
+        .scenario-box {
+            border-left: 4px solid #ff3b30;
+            background: #fff1f0;
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 15px 0;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 100px 0 40px;
+            color: var(--text-sub);
+            font-size: 13px;
+        }
+
+        @media (max-width: 500px) {
+            .comparison-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="badge">ELECTION SYSTEM UPDATE</span>
+        <h1>国会・二院制のリアル</h1>
+        <p style="color: var(--text-sub);">16歳が知っておくべき「衆議院と参議院」のパワーバランス</p>
+    </header>
+
+    <section>
+        <h2><span class="num">01</span> なぜ2つも必要なのか？</h2>
+        <div class="card">
+            <p>日本は**「1つの意見だけで突き進まない」**という、あえて面倒な仕組み（二院制）を採用しています。</p>
+            
+            <div class="system-flow">
+                <div class="flow-item">アイデア (衆)</div>
+                <div style="color: var(--text-sub);">→</div>
+                <div class="flow-item">チェック (参)</div>
+                <div style="color: var(--text-sub);">→</div>
+                <div class="flow-item" style="border-color: var(--accent-green);">ルール決定</div>
+            </div>
+
+            <p><strong>💡 アプリ運営に例えると：</strong><br>
+            「面白い機能をどんどん出したい**開発者（衆）**」の意見に対し、「その機能で不具合が出ないか、長く使えるかを確認する**検証チーム（参）**」がいる状態です。2段階の審査を通すことで、社会というシステムの致命的なバグを防いでいます。</p>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="num">02</span> 衆議院の「優越」という特権</h2>
+        <p>「でも、意見がずっと平行線だったら？」その時に発動するのが**衆議院のパワー**です。</p>
+        
+        <div class="power-visual">
+            <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 600;">
+                <span>衆議院：リーダー決定権・予算決定権</span>
+                <span style="color: var(--accent-blue);">Strong</span>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill" style="width: 85%; background: var(--accent-blue);"></div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; margin-top: 15px;">
+                <span>参議院：再検討・ブレーキ権</span>
+                <span style="color: var(--text-sub);">Soft</span>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill" style="width: 50%; background: var(--border);"></div>
+            </div>
+        </div>
+
+        <p>総理大臣を決めたり、予算案を通したりする際、最終的には衆議院の意見が通ります。衆議院は「任期が短く、解散（クビ）もある」ため、**常に最新の国民の空気を反映している**と見なされているからです。</p>
+    </section>
+
+    <section>
+        <h2><span class="num">03</span> キャラの使い分け</h2>
+        <div class="comparison-grid">
+            <div class="comp-card">
+                <span class="label label-blue">衆議院</span>
+                <p><strong>「今の声」を届ける。</strong></p>
+                <p style="font-size: 14px; color: var(--text-sub);">
+                    任期4年。解散あり。SNSのトレンドのように、世の中の「今すぐ変えたい！」というスピード感に特化したグループ。
+                </p>
+            </div>
+            <div class="comp-card">
+                <span class="label label-green">参議院</span>
+                <p><strong>「未来」を見守る。</strong></p>
+                <p style="font-size: 14px; color: var(--text-sub);">
+                    任期6年。解散なし。流行に流されず、10年後を見据えた「地味だけど大事な修正」を行う、落ち着いた専門家グループ。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="num">04</span> システム崩壊のリスク</h2>
+        <div class="scenario-box">
+            <strong>🚨 もし衆議院だけだったら？</strong><br>
+            政治家が「選挙に勝ちたい！」という一心で、その時だけ人気の出る極端な政策（例：税金をゼロにするが、将来の貯金もゼロにする等）を強引に決めてしまうリスクがあります。
+        </div>
+        <div class="card" style="background: #fdfdfd; border: 1px dashed var(--border);">
+            <p>参議院という**「クビのリスクがない別の視点」**があるからこそ、一時的な熱狂にブレーキをかけ、冷静な判断を保つことができるのです。</p>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="num">05</span> 一票の戦略的投資</h2>
+        <div class="card" style="background: var(--text-main); color: white;">
+            <p>18歳になったら、あなたは2つの権利を持ちます。</p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 15px;">🔹 **衆議院：** 「今この瞬間の不満」を解消してくれるリーダーを選ぶ。</li>
+                <li>🔹 **参議院：** 「10年後の自分」が後悔しないためのルールを守る人を選ぶ。</li>
+            </ul>
+        </div>
+        <p style="text-align: center; color: var(--text-sub); font-style: italic;">
+            あなたは2年後、どんな未来に投資しますか？
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Social Architecture Lab | Tokyo, Japan</p>
+    </footer>
+</div>
+
+</body>
+</html>
