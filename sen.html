@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最強にわかる！日本の選挙制度図解</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #ec4899;
+            --accent: #f59e0b;
+            --bg: #f8fafc;
+            --text: #1e293b;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            border-bottom: 4px solid var(--primary);
+            padding-bottom: 10px;
+        }
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 8px solid var(--primary);
+        }
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .card {
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        .merit { background-color: #dcfce7; border: 1px solid #22c55e; }
+        .demerit { background-color: #fee2e2; border: 1px solid #ef4444; }
+        
+        /* 選挙区の図解イメージ */
+        .visual-box {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .vote-row {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 100px;
+        }
+        .bar {
+            width: 40px;
+            border-radius: 5px 5px 0 0;
+            position: relative;
+        }
+        .bar-winner { background: var(--primary); height: 80%; }
+        .bar-loser { background: #cbd5e1; height: 40%; }
+        .dead-vote {
+            color: #ef4444;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        /* 比例代表のピザイメージ */
+        .pizza-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .pizza {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #3b82f6 0% 60%, 
+                #ef4444 60% 85%, 
+                #eab308 85% 100%
+            );
+        }
+
+        /* ゾンビ復活 */
+        .zombie-box {
+            border: 2px dashed #64748b;
+            padding: 15px;
+            background: #fafafa;
+            text-align: center;
+        }
+        .arrow { font-size: 2rem; color: var(--secondary); }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #e2e8f0;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .comparison { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>衆議院選挙のしくみ図解</h1>
+
+    <div class="section" style="border-left-color: #2563eb;">
+        <div class="section-title">🗳️ 小選挙区制：1位だけが勝つ！</div>
+        <p><strong>「クラスで1人の学級委員を決める」</strong>イメージ</p>
+        
+        <div class="visual-box">
+            <div class="vote-row">
+                <div><div class="bar bar-winner"></div>👑1位</div>
+                <div><div class="bar bar-loser"></div>2位</div>
+                <div><div class="bar bar-loser" style="height:20%"></div>3位</div>
+            </div>
+            <p class="dead-vote">↑ 2位以下の票はすべて「死票」になる</p>
+        </div>
+
+        <div class="comparison">
+            <div class="card merit">
+                <strong>⭕ メリット</strong><br>
+                1つの大きな政党が勝ちやすく、意見がまとまりやすい（政治が安定！）。
+            </div>
+            <div class="card demerit">
+                <strong>❌ デメリット</strong><br>
+                負けた人の意見が全く届かない。接戦でも1位以外は全員アウト。
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="border-left-color: #ec4899;">
+        <div class="section-title">🍕 比例代表制：みんなで分け合う！</div>
+        <p><strong>「政党（グループ）」</strong>に投票する。票数に応じてイスを分けるよ。</p>
+        
+        <div class="visual-box">
+            <div class="pizza-container">
+                <div class="pizza"></div>
+                <div style="text-align: left; font-size: 0.9rem;">
+                    <span style="color:#3b82f6">■</span> A党（大）：3議席<br>
+                    <span style="color:#ef4444">■</span> B党（中）：1議席<br>
+                    <span style="color:#eab308">■</span> C党（小）：1議席
+                </div>
+            </div>
+            <p><small>※ドント式 ＝ 票数が多い順にピザを切り分ける計算のこと</small></p>
+        </div>
+        <p><strong>ポイント：</strong> 小さなグループの意見も国会に届きやすくなる！</p>
+    </div>
+
+    <div class="section" style="border-left-color: #f59e0b;">
+        <div class="section-title">🧟 復活当選：ダブルチャンス！</div>
+        <p>小選挙区で負けても、比例代表で生き返る「ゾンビ当選」。</p>
+        
+        <div class="zombie-box">
+            <div><strong>小選挙区</strong></div>
+            <div style="color:#ef4444; font-weight: bold;">❌ 落選</div>
+            <div class="arrow">↓ (惜敗率が高いと...)</div>
+            <div style="background: #dcfce7; padding: 10px; border-radius: 5px;">
+                <strong>比例代表で 👑 復活当選！</strong>
+            </div>
+        </div>
+        <p><small>※惜敗率（せきはいりつ）：1位にどれだけ惜しく迫ったかのスコア</small></p>
+    </div>
+
+    <div class="section" style="border-left-color: #64748b;">
+        <div class="section-title">⚖️ なぜ2つを混ぜるの？</div>
+        <p><strong>1つだけだと偏（かたよ）ってしまうから！</strong></p>
+        <div style="background: #f1f5f9; padding: 15px; border-radius: 10px;">
+            <p>🏃 <strong>小選挙区</strong> ＝ 「決める力」を強くする<br>
+            📢 <strong>比例代表</strong> ＝ 「みんなの意見」を拾う</p>
+            <div style="text-align: center; font-weight: bold;">
+                この２つを合体させてバランスを取っているんだ！
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
