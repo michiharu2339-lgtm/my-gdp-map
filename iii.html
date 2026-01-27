@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-bg: #f0f4f8;
+            --card-bg: #ffffff;
+            --accent-red: #ff6b6b;
+            --accent-blue: #4d96ff;
+            --accent-green: #6bc167;
+            --text-main: #2d3436;
+            --header-bg: #2d3436;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 { margin: 0; font-size: 1.5rem; }
+        .subtitle { font-size: 0.9rem; opacity: 0.8; margin-top: 10px; }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-left: 5px solid var(--accent-blue);
+            padding-left: 10px;
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        /* 1. 財源の図解 */
+        .money-balance {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .tax-box {
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .lost-tax { background: #ffeaa7; color: #d35400; border: 2px dashed #d35400; }
+        .replacement { background: #e3f2fd; border: 1px solid var(--accent-blue); }
+        .arrow-down { text-align: center; font-size: 1.5rem; color: #636e72; }
+
+        /* 2. メリット・デメリット */
+        .vs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .vs-box {
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+        }
+        .merit { background: #e8f5e9; border-top: 4px solid var(--accent-green); }
+        .demerit { background: #ffebee; border-top: 4px solid var(--accent-red); }
+
+        /* 3. 世界の事例 */
+        .world-map-list {
+            list-style: none;
+            padding: 0;
+        }
+        .world-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .flag { font-size: 1.5rem; }
+
+        /* 4. ハードル */
+        .wall {
+            background: #dfe6e9;
+            padding: 15px;
+            border-radius: 10px;
+            position: relative;
+            margin-top: 20px;
+        }
+        .wall-title { font-weight: bold; color: #2d3436; margin-bottom: 5px; }
+
+        .conclusion {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            vertical-align: middle;
+            margin-bottom: 5px;
+        }
+        .badge-red { background: var(--accent-red); color: white; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>消費税廃止のリアル</h1>
+        <p class="subtitle">中学生でもわかる「お金の仕組み」図解</p>
+    </header>
+
+    <div class="card">
+        <h2>1. 足りなくなる28兆円の行方</h2>
+        <p>消費税をなくすと、国のお財布から巨大な金額が消えます。</p>
+        <div class="money-balance">
+            <div class="tax-box lost-tax">
+                消費税（約28兆円）が消滅
+            </div>
+            <div class="arrow-down">⬇︎ 代わりの候補は？ ⬇︎</div>
+            <div class="tax-box replacement">
+                <small>所得税アップ</small><br>給料から引かれるお金が増える
+            </div>
+            <div class="tax-box replacement">
+                <small>法人税アップ</small><br>会社が海外へ逃げるかも？
+            </div>
+            <div class="tax-box replacement" style="background:#fef1f1;">
+                <small>国債発行</small><br>将来の君たちが返す「借金」
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>2. 天国と地獄の天秤</h2>
+        <div class="vs-container">
+            <div class="vs-box merit">
+                <strong>【天国】</strong><br>
+                全品10%オフ！<br>
+                景気が良くなり、お店が活発になる。
+            </div>
+            <div class="vs-box demerit">
+                <strong>【地獄】</strong><br>
+                社会保障がピンチ！<br>
+                病院の窓口負担が増え、年金も減るかも。
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>3. 世界はどうなっている？</h2>
+        <ul class="world-map-list">
+            <li class="world-item">
+                <span class="flag">🇺🇸</span>
+                <div><strong>アメリカ</strong><br><small>国としての消費税はないが、州ごとに別の税金がある。</small></div>
+            </li>
+            <li class="world-item">
+                <span class="flag">🇲🇾</span>
+                <div><strong>マレーシア</strong><br><small>一度廃止したが、お金が足りず別の税金を導入した。</small></div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>4. 立ちはだかる「最大の壁」</h2>
+        <div class="wall">
+            <span class="badge badge-red">超高齢社会</span>
+            <div class="wall-title">増え続ける「支えるお金」</div>
+            <small>お年寄りの医療費や年金は、毎年約1兆円ずつ増えています。安定して入る消費税なしで、この壁を越えるのは超難問です。</small>
+        </div>
+    </div>
+
+    <div class="conclusion">
+        <h3>結論</h3>
+        <p><strong>「理論上はできるが、相当な覚悟が必要」</strong></p>
+        <p style="font-size: 0.8rem;">買い物は安くなるけれど、病院や年金の仕組みを根本から作り直す「大手術」をセットで行う必要があります。</p>
+    </div>
+
+    <p style="text-align:center; color:#636e72; font-size:0.7rem; margin-top:20px;">
+        © 2026 経済の仕組み学習ガイド
+    </p>
+</div>
+
+</body>
+</html>
