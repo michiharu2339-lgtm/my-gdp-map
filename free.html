@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --freelance-color: #16a085;
+            --income-color: #2980b9;
+            --expense-color: #e67e22;
+            --deduction-color: #8e44ad;
+            --border-red: #c0392b;
+            --bg-light: #f9fbfb;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-light);
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .container { max-width: 450px; margin: 0 auto; }
+
+        /* ヘッダー */
+        .hero-banner {
+            background: linear-gradient(135deg, #16a085, #1abc9c);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(22,160,133,0.2);
+            margin-bottom: 25px;
+        }
+        .hero-banner h1 { margin: 0; font-size: 1.4rem; }
+        .hero-banner p { margin: 10px 0 0; font-size: 0.85rem; opacity: 0.9; }
+
+        /* セクションカード */
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--freelance-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* 魔法の引き算ビジュアル */
+        .formula-container {
+            text-align: center;
+            padding: 10px 0;
+        }
+        .formula-item {
+            padding: 12px;
+            border-radius: 12px;
+            margin: 5px 0;
+            font-weight: bold;
+            position: relative;
+        }
+        .item-uriage { background: #e3f2fd; color: var(--income-color); border: 2px solid #bbdefb; }
+        .item-keibi { background: #fff3e0; color: var(--expense-color); border: 2px solid #ffe0b2; }
+        .item-kojyo { background: #f3e5f5; color: var(--deduction-color); border: 2px solid #e1bee7; }
+        
+        .operator { font-size: 1.5rem; color: #999; margin: 2px 0; }
+
+        /* ボーダーライン表示 */
+        .border-display {
+            background: #fff5f5;
+            border: 3px double var(--border-red);
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        .border-price {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--border-red);
+            display: block;
+        }
+
+        /* 経費の例リスト */
+        .keibi-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .keibi-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        /* 重要ポイント */
+        .point-box {
+            background: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+        .point-box strong { color: #f1c40f; }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="hero-banner">
+        <h1>フリーランス戦略ガイド</h1>
+        <p>国分寺市で「非課税世帯」を賢く守る</p>
+    </header>
+
+    <div class="card">
+        <span class="section-tag">戦略 01：所得のコントロール</span>
+        <div class="formula-container">
+            <div class="formula-item item-uriage">年間の売上（入ってきたお金）</div>
+            <div class="operator">−</div>
+            <div class="formula-item item-keibi">仕事の経費（使ったお金）</div>
+            <div class="operator">−</div>
+            <div class="formula-item item-kojyo">青色申告特別控除 (65万円)</div>
+            <div class="operator">＝</div>
+            <div class="border-display">
+                <span style="font-size:0.8rem;">最終結果（所得）を</span>
+                <span class="border-price">135万円</span>
+                <span style="font-size:0.8rem;">以下に抑えれば防衛成功！</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <span class="section-tag">戦略 02：これ、全部「経費」です</span>
+        <p style="font-size:0.85rem;">仕事に必要なものは「収入」から引き算できます。</p>
+        <div class="keibi-list">
+            <div class="keibi-item">💻<br>PC・周辺機器</div>
+            <div class="keibi-item">📱<br>スマホ・ネット代</div>
+            <div class="keibi-item">🏠<br>家賃・電気代の一部</div>
+            <div class="keibi-item">☕<br>打合せのカフェ代</div>
+            <div class="keibi-item">📚<br>仕事用の本・資料</div>
+            <div class="keibi-item">🚃<br>仕事での移動費</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <span class="section-tag">戦略 03：青色申告は必須装備</span>
+        <div style="font-size:0.85rem;">
+            <p><strong>なぜ「青色」なの？</strong><br>
+            普通なら「0円」の控除が、帳簿をつけるだけで<strong>「65万円」</strong>にアップします。<br><br>
+            これは、年収200万円の人なら<strong>「実質135万円しか稼いでないことにしていいよ」</strong>という国公認のボーナスです。</p>
+        </div>
+    </div>
+
+    <div class="point-box">
+        <strong>⚠️ 絶対に間違えてはいけない点</strong><br>
+        <p>確定申告を1日でも遅れると、65万円の割引が「10万円」に没収されます。そうなると、計算が狂って<strong>一瞬で課税世帯に転落</strong>します！期限厳守が最大の防衛です。</p>
+    </div>
+
+    <footer style="text-align:center; padding: 20px; color: #888; font-size: 0.75rem;">
+        ※所得135万円以下であれば、国分寺市の住民税は非課税となります。<br>
+        (障害者控除適用の場合)
+    </footer>
+</div>
+
+</body>
+</html>
