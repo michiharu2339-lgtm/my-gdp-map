@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最強！親の扶養まるわかりガイド</title>
+    <style>
+        :root {
+            --main-color: #4A90E2;
+            --sub-color: #F5A623;
+            --bg-color: #F0F4F8;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 10px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: var(--main-color);
+            color: var(--white);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 { margin: 0; font-size: 1.5rem; }
+        .header p { margin: 10px 0 0; font-size: 0.9rem; opacity: 0.9; }
+
+        .section { padding: 25px 20px; border-bottom: 1px solid #eee; }
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            color: var(--main-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .section-title span {
+            background: var(--main-color);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* 図解：チーム家族 */
+        .team-box {
+            background: #E1F5FE;
+            border: 2px dashed var(--main-color);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .team-visual {
+            display: flex;
+            justify-content: space-around;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .arrow-down { font-size: 1.5rem; color: var(--main-color); margin: 5px 0; }
+
+        /* 壁のカード */
+        .wall-card {
+            background: #fff9e6;
+            border-left: 5px solid var(--sub-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 10px 10px 0;
+        }
+        .wall-price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #d35400;
+        }
+        .wall-desc { font-size: 0.85rem; margin-top: 5px; }
+
+        /* メリット・デメリット表 */
+        .vs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .vs-table th {
+            background: #f8f8f8;
+            padding: 10px;
+            font-size: 0.8rem;
+            border: 1px solid #ddd;
+        }
+        .vs-table td {
+            padding: 10px;
+            font-size: 0.85rem;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .badge-plus { background: #e8f5e9; color: #2e7d32; }
+        .badge-minus { background: #ffebee; color: #c62828; }
+
+        /* おトクなラインの可視化 */
+        .profit-bar {
+            height: 30px;
+            background: linear-gradient(to right, #4caf50 0%, #4caf50 60%, #f44336 65%, #f44336 80%, #4caf50 90%);
+            border-radius: 15px;
+            margin: 20px 0 10px;
+            position: relative;
+        }
+        .bar-label { font-size: 0.7rem; display: flex; justify-content: space-between; }
+
+        .footer {
+            background: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+        }
+        .highlight { background: linear-gradient(transparent 70%, #fff176 70%); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>親の扶養まるわかりガイド</h1>
+        <p>2026年最新ルール対応 / 中学生向け解説</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title"><span>1</span> 扶養ってなに？</div>
+        <p>簡単に言うと、家族を1つの「チーム」として、<span class="highlight">「稼ぎが少ない人の分を、稼いでる人がまとめてカバーする」</span>仕組みです。</p>
+        <div class="team-box">
+            <div class="team-visual">👨‍💼 ＋ 👩‍💼</div>
+            <div>親（稼ぎ手）</div>
+            <div class="arrow-down">⬇️ サポート ⬇️</div>
+            <div class="team-visual">👦 ＋ 👧</div>
+            <div>あなた（扶養されている人）</div>
+        </div>
+        <p style="font-size: 0.85rem;">あなたは生まれたときからこのチームに入っています。親が「子供を養っています」という書類を出しているからです。</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title"><span>2</span> チームを外れる「2つの壁」</div>
+        <p>バイトなどで稼ぎすぎると、「もう一人立ちできるよね」とみなされてチームを外れます。</p>
+
+        <div class="wall-card">
+            <div class="wall-price">106万・130万円の壁</div>
+            <div class="badge badge-minus">社会保険</div>
+            <div class="wall-desc">
+                自分専用の「保険証」と「年金」を持つことになります。<b>手取りが20万円くらい減る</b>一番大きな壁です。
+            </div>
+        </div>
+
+        <div class="wall-card">
+            <div class="wall-price">160万円（旧103万）の壁</div>
+            <div class="badge badge-minus">税金</div>
+            <div class="wall-desc">
+                「所得税」という国の会費を自分で払い始めます。※2026年の税制改正を反映した目安です。
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title"><span>3</span> 外れるメリット・デメリット</div>
+        <table class="vs-table">
+            <tr>
+                <th>項目</th>
+                <th>外れるデメリット</th>
+                <th>外れるメリット</th>
+            </tr>
+            <tr>
+                <td>お財布</td>
+                <td>保険料で月2〜3万引かれる。<br><span class="badge badge-minus">手取り減</span></td>
+                <td>収入の上限がなくなる。<br><span class="badge badge-plus">無限に稼げる</span></td>
+            </tr>
+            <tr>
+                <td>将来</td>
+                <td>特になし</td>
+                <td>将来もらえる年金が増える。<br><span class="badge badge-plus">老後が安心</span></td>
+            </tr>
+            <tr>
+                <td>保証</td>
+                <td>親のサポート終了</td>
+                <td>病気で休んでも給料が出る。<br><span class="badge badge-plus">傷病手当金</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title"><span>4</span> 結論：いくら稼ぐのが正解？</div>
+        <p>一番もったいないのは<b>「ちょっとだけ壁を超えて、手取りが減ること」</b>です！</p>
+        
+        <div class="profit-bar"></div>
+        <div class="bar-label">
+            <span>0円</span>
+            <span>130万(損!)</span>
+            <span>160万以上(得!)</span>
+        </div>
+
+        <ul style="font-size: 0.9rem; padding-left: 20px;">
+            <li><b>学生なら：</b> 年130万円未満に抑えて、勉強を頑張る！</li>
+            <li><b>フリーターなら：</b> 130万で止めるか、一気に160万以上稼ぐ！</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 扶養の仕組みガイド<br>※2026年時点の概算です。正確な計算は役所や税務署へ。</p>
+    </div>
+</div>
+
+</body>
+</html>
