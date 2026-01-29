@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-blue: #005bac;
+            --accent-gold: #f39c12;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --text-main: #333333;
+            --rank-65: #e74c3c;
+            --rank-55: #3498db;
+            --rank-10: #2ecc71;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), #003a70);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 { margin: 0; font-size: 1.4rem; }
+        p.subtitle { margin: 5px 0 0; font-size: 0.9rem; opacity: 0.9; }
+
+        /* セクション共通 */
+        section {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-left: 5px solid var(--primary-blue);
+            padding-left: 10px;
+            font-size: 1.1rem;
+            margin-top: 0;
+            color: var(--primary-blue);
+        }
+
+        /* 概念図解 */
+        .concept-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #fff9e6;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .book-icon {
+            text-align: center;
+            flex: 1;
+        }
+
+        .book-icon span { font-size: 2rem; }
+        .vs { font-weight: bold; color: var(--accent-gold); font-size: 1.2rem; }
+
+        /* ランク比較 */
+        .rank-card {
+            border: 2px solid #eee;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            padding: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rank-65 { border-color: var(--rank-65); background: #fff5f5; }
+        .rank-55 { border-color: var(--rank-55); background: #f0f7ff; }
+        .rank-10 { border-color: var(--rank-10); background: #f2fff7; }
+
+        .rank-label {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 4px 12px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            border-bottom-left-radius: 10px;
+        }
+
+        .bg-65 { background: var(--rank-65); }
+        .bg-55 { background: var(--rank-55); }
+        .bg-10 { background: var(--rank-10); }
+
+        .condition-list {
+            margin: 5px 0 0;
+            padding-left: 20px;
+            font-size: 0.9rem;
+        }
+
+        .condition-list li { margin-bottom: 3px; }
+
+        /* 落とし穴 */
+        .warning-box {
+            background: #fff0f0;
+            border: 2px dashed #ff4d4d;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .warning-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .warning-item b { color: #d63031; display: block; }
+
+        /* チェックリスト */
+        .check-item {
+            display: flex;
+            align-items: center;
+            background: #f0f0f0;
+            margin-bottom: 8px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .check-box {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #999;
+            background: white;
+            margin-right: 10px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 30px;
+            padding-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>青色申告特別控除の図解</h1>
+        <p class="subtitle">2026年度版・スマホ完全対応</p>
+    </header>
+
+    <section>
+        <h2>1. 制度のイメージ</h2>
+        <p>国が<b>「しっかり帳簿をつけてくれたら、利益を減らして計算していいよ！」</b>と認めてくれるボーナス制度です。</p>
+        
+        <div class="concept-box">
+            <div class="book-icon">
+                <span>📖</span><br>
+                <small>お小遣い帳<br>(簡易簿記)</small>
+            </div>
+            <div class="vs">VS</div>
+            <div class="book-icon">
+                <span>📚</span><br>
+                <small>本格的な帳簿<br>(複式簿記)</small>
+            </div>
+        </div>
+        <p style="font-size: 0.85rem; color: #666;">※会計ソフトを使えば、今の時代「本格的」も自動で作れます！</p>
+    </section>
+
+    <section>
+        <h2>2. 選べる3つのランク</h2>
+        
+        <div class="rank-card rank-65">
+            <div class="rank-label bg-65">最強：65万円控除</div>
+            <strong>【条件】</strong>
+            <ul class="condition-list">
+                <li>本格的な帳簿（複式簿記）</li>
+                <li>期限内に提出（3/15厳守）</li>
+                <li><b>e-Tax（電子申告）</b>をする</li>
+            </ul>
+        </div>
+
+        <div class="rank-card rank-55">
+            <div class="rank-label bg-55">標準：55万円控除</div>
+            <strong>【条件】</strong>
+            <ul class="condition-list">
+                <li>本格的な帳簿（複式簿記）</li>
+                <li>期限内に提出（3/15厳守）</li>
+                <li>※紙で提出するとここになります</li>
+            </ul>
+        </div>
+
+        <div class="rank-card rank-10">
+            <div class="rank-label bg-10">手軽：10万円控除</div>
+            <strong>【条件】</strong>
+            <ul class="condition-list">
+                <li>お小遣い帳レベル（簡易簿記）</li>
+                <li>期限を過ぎてもOK</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. 恐ろしい落とし穴</h2>
+        <div class="warning-box">
+            <div class="warning-item">
+                <span>🚨</span>
+                <div>
+                    <b>期限を1秒でも過ぎたら即アウト</b>
+                    55・65万ランクから10万ランクへ強制的に引きずり下ろされます。
+                </div>
+            </div>
+            <div class="warning-item">
+                <span>📝</span>
+                <div>
+                    <b>事前申請が必要</b>
+                    「今年からやるよ！」という届出を3/15までに出していないと使えません。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. セルフチェックリスト</h2>
+        <div class="check-item"><div class="check-box"></div> 申請書を税務署に出した？</div>
+        <div class="check-item"><div class="check-box"></div> 会計ソフトを使う予定？</div>
+        <div class="check-item"><div class="check-box"></div> マイナンバーカードはある？</div>
+        <div class="check-item"><div class="check-box"></div> 3月15日までに申告できる？</div>
+    </section>
+
+    <footer>
+        © 2026 青色申告攻略ガイド<br>
+        中学生でもわかる税金シリーズ
+    </footer>
+</div>
+
+</body>
+</html>
