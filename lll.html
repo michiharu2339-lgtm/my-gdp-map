@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>106万・130万の壁 攻略図解</title>
+    <style>
+        :root {
+            --wall-106: #FF7043;
+            --wall-130: #D32F2F;
+            --safe-green: #4CAF50;
+            --danger-zone: #FF5252;
+            --bg-color: #F4F7F9;
+            --card-bg: #FFFFFF;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 15px;
+            color: #333;
+        }
+        .guide-container {
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #1A237E, #3949AB);
+            color: white;
+            padding: 25px 15px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .header h1 { margin: 0; font-size: 1.4rem; }
+        .header p { margin: 8px 0 0; font-size: 0.85rem; opacity: 0.9; }
+
+        /* メインビジュアル：道のり */
+        .roadmap {
+            background: var(--card-bg);
+            padding: 30px 15px;
+            position: relative;
+            border-bottom: 2px dashed #ddd;
+        }
+        .zone {
+            padding: 15px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            position: relative;
+            border: 2px solid #eee;
+        }
+        .zone::after {
+            content: '▼';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ccc;
+        }
+        .zone-safe { border-color: var(--safe-green); background-color: #E8F5E9; }
+        .zone-warning { border-color: var(--wall-106); background-color: #FFF3E0; }
+        .zone-danger { border-color: var(--wall-130); background-color: #FFEBEE; }
+
+        .zone-title { font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 5px; }
+        .price-tag { font-size: 1.3rem; font-weight: 800; color: #333; }
+
+        /* 働き損グラフ */
+        .hand-graph {
+            background: var(--card-bg);
+            padding: 20px;
+            margin-top: 10px;
+        }
+        .graph-bar-container {
+            height: 40px;
+            background: #eee;
+            border-radius: 20px;
+            display: flex;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .bar-safe { width: 50%; background: var(--safe-green); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; }
+        .bar-loss { width: 20%; background: var(--danger-zone); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; }
+        .bar-gain { width: 30%; background: #2196F3; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; }
+
+        /* 比較カード */
+        .compare-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            font-size: 0.8rem;
+        }
+        .card-header { font-weight: bold; margin-bottom: 10px; border-bottom: 2px solid; padding-bottom: 5px; }
+        
+        .footer {
+            background: #37474F;
+            color: white;
+            padding: 20px;
+            border-radius: 0 0 20px 20px;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+        .emoji-icon { font-size: 1.5rem; display: block; margin-bottom: 5px; }
+        .highlight-yellow { background: linear-gradient(transparent 60%, #FFF59D 60%); padding: 0 4px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="guide-container">
+    <div class="header">
+        <h1>106万・130万の壁 攻略MAP</h1>
+        <p>〜2026年最新版：手取りを減らさない稼ぎ方〜</p>
+    </div>
+
+    <div class="roadmap">
+        <div class="zone zone-safe">
+            <span class="emoji-icon">✅</span>
+            <span class="zone-title">【安全】親のチーム継続</span>
+            <span class="price-tag">年収 〜105万円</span>
+            <p style="font-size:0.8rem; margin:5px 0 0;">親の健康保険と年金にタダで入れる最強の状態。手取りは100%あなたのもの！</p>
+        </div>
+
+        <div class="zone zone-warning">
+            <span class="emoji-icon">⚠️</span>
+            <span class="zone-title">【106万円の壁】卒業の予兆</span>
+            <span class="price-tag">年収 106万円〜</span>
+            <p style="font-size:0.8rem; margin:5px 0 0;"><span class="highlight-yellow">週20時間以上</span>働くと、自分専用の保険料（月約1.3万円）が引かれ始めます。</p>
+        </div>
+
+        <div class="zone zone-danger" style="margin-bottom:0;">
+            <span class="emoji-icon">🚨</span>
+            <span class="zone-title">【130万円の壁】強制卒業</span>
+            <span class="price-tag">年収 130万円〜</span>
+            <p style="font-size:0.8rem; margin:5px 0 0;">働き方に関わらず、全員が扶養を外れます。手取りがガクンと減る<span style="color:red; font-weight:bold;">「働き損ゾーン」</span>突入！</p>
+        </div>
+    </div>
+
+    <div class="hand-graph">
+        <h3 style="font-size: 1rem; text-align: center; margin-bottom: 0;">手取り（自由なお金）のイメージ</h3>
+        <div class="graph-bar-container">
+            <div class="bar-safe">105万稼ぐ<br>(手取り105)</div>
+            <div class="bar-loss">130万稼ぐ<br>(手取り110)</div>
+            <div class="bar-gain">160万稼ぐ<br>(手取り135)</div>
+        </div>
+        <p style="font-size: 0.75rem; color: #666; text-align: center;">※130万稼いでも、保険料で手取りは105万の時とほぼ変わりません！</p>
+    </div>
+
+    <div class="compare-box">
+        <div class="card">
+            <div class="card-header" style="color:var(--wall-106); border-color:var(--wall-106);">外れるデメリット</div>
+            ・毎月の給料から約1.5万円引かれる<br>
+            ・親が払う税金も少し増える
+        </div>
+        <div class="card">
+            <div class="card-header" style="color:var(--safe-green); border-color:var(--safe-green);">外れるメリット</div>
+            ・将来もらえる年金が増える！<br>
+            ・病気で休んでも給料が出る
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>2026年最新アドバイス</strong><br>
+        「週何時間働いているか」が今の最大のチェックポイントです。<br>
+        中途半端に稼ぐのが一番もったいない！<br>
+        抑えるか、突き抜けるか、自分で選ぼう！</p>
+    </div>
+</div>
+
+</body>
+</html>
