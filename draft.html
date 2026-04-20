@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最強図解！株式会社のしくみ</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --success: #059669;
+            --warning: #d97706;
+            --danger: #dc2626;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .step-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            border-left: 6px solid var(--primary);
+        }
+
+        .step-number {
+            background: var(--primary);
+            color: white;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 10px 0;
+            display: block;
+        }
+
+        /* 図解パーツ */
+        .diagram {
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .flow-box {
+            display: inline-block;
+            background: white;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 8px 12px;
+            margin: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 1.2rem;
+            color: var(--primary);
+            display: block;
+            margin: 5px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .badge-term { background: #dbeafe; color: #1e40af; } /* 専門用語用 */
+
+        .risk-card {
+            border-left-color: var(--danger);
+        }
+
+        .profit-card {
+            border-left-color: var(--success);
+        }
+
+        .highlight {
+            color: var(--danger);
+            font-weight: bold;
+            background: linear-gradient(transparent 70%, #ffefef 70%);
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🥖 高級パン屋で学ぶ！<br>株式会社のしくみ</h1>
+
+    <div class="step-card">
+        <span class="step-number">STEP 1</span>
+        <span class="step-title">資金集めと「株」</span>
+        <p>100万円必要だけどお金がない！そこで「応援チケット」を発行します。</p>
+        
+        <div class="diagram">
+            <div class="flow-box">友達（5人）</div>
+            <div class="arrow">⬇︎ お金を出す（各20万）</div>
+            <div class="flow-box" style="background: #eff6ff; border-color: var(--primary);">資本金：100万円</div>
+            <div class="arrow">⬆︎ チケットを渡す</div>
+            <div class="flow-box">応援チケット（株）</div>
+        </div>
+        <p><span class="badge badge-term">株主</span> お金を出した友達のこと<br>
+           <span class="badge badge-term">資本金</span> 集まった合計の100万円</p>
+    </div>
+
+    <div class="step-card">
+        <span class="step-number">STEP 2</span>
+        <span class="step-title">役割分担（所有と経営）</span>
+        <p>「お金を出す人」と「パンを焼くプロ」を分けます。</p>
+        
+        <div class="diagram">
+            <div class="flow-box">株主（友達）</div>
+            <div class="arrow">⬇︎ 会議（株主総会）で選ぶ</div>
+            <div class="flow-box" style="background: #ecfdf5; border-color: var(--success);">取締役（店長：君）</div>
+            <div class="arrow">⬇︎</div>
+            <div class="flow-box">お店の経営・運営</div>
+        </div>
+        <p><span class="badge badge-term">株主総会</span> 会社の重要事項を決める最高会議<br>
+           <span class="badge badge-term">取締役</span> 実際に会社を動かすリーダー</p>
+    </div>
+
+    <div class="step-card profit-card">
+        <span class="step-number" style="background: var(--success);">STEP 3</span>
+        <span class="step-title">儲けの分配（配当）</span>
+        <p>パンが売れて利益が出たら、みんなでハッピーに！</p>
+        
+        <div class="diagram">
+            <div class="flow-box">お店の利益</div>
+            <div class="arrow">⬇︎ お礼として配る</div>
+            <div style="display: flex; justify-content: center;">
+                <div class="flow-box">株主A</div>
+                <div class="flow-box">株主B</div>
+                <div class="flow-box">株主C</div>
+            </div>
+        </div>
+        <p><span class="badge badge-term" style="background: #d1fae5; color: #065f46;">配当金</span> 株主にもらえる「お礼のお金」</p>
+    </div>
+
+    <div class="step-card risk-card">
+        <span class="step-number" style="background: var(--danger);">STEP 4</span>
+        <span class="step-title">失敗のリスク（有限責任）</span>
+        <p>もし1000万円の借金をしてお店が潰れても…</p>
+        
+        <div class="diagram" style="background: #fff1f2;">
+            <div class="flow-box" style="border-color: var(--danger);">お店が倒産！</div>
+            <div class="arrow">⬇︎ 借金はどうなる？</div>
+            <p style="font-weight: bold; color: var(--danger);">株主が失うのは<br>出した「20万円」だけ！</p>
+        </div>
+        <p><span class="highlight">自分の貯金や家まで取られることはありません。</span>これが<span class="badge badge-term" style="background: #fee2e2; color: #991b1b;">有限責任</span>という最強のルールです。</p>
+    </div>
+
+    <div class="footer">
+        © 2026 経済の先生AI<br>
+        この図解で、株式会社の基本はバッチリです！
+    </div>
+</div>
+
+</body>
+</html>
