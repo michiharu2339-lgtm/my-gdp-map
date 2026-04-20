@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>図解：株式会社の仕組み</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --accent: #f1c40f;
+            --danger: #e74c3c;
+            --success: #2ecc71;
+            --bg: #f8f9fa;
+            --text: #2c3e50;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 15px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--primary);
+        }
+        h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+        /* 図解エリア */
+        .diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+        }
+        .box {
+            width: 80%;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .株主 { background: #d6eaf8; border: 2px solid var(--primary); }
+        .経営者 { background: #fef9e7; border: 2px solid var(--accent); }
+        .会社 { background: #e8f8f5; border: 2px solid var(--success); }
+        
+        .arrow {
+            font-size: 1.2rem;
+            color: #95a5a6;
+        }
+        .arrow-text {
+            font-size: 0.7rem;
+            color: #7f8c8d;
+            margin-top: -5px;
+        }
+
+        /* メリット・リスク表 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #eee; }
+        .plus { color: var(--success); font-weight: bold; }
+        .minus { color: var(--danger); font-weight: bold; }
+
+        .footer-note {
+            font-size: 0.8rem;
+            text-align: center;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>① 株式会社の「3人」の関係</h2>
+        <div class="diagram">
+            <div class="box 株主">株主（オーナー）<br><small>お金を出す人</small></div>
+            <div class="arrow">↓</div>
+            <div class="arrow-text">「経営を任せた！」</div>
+            <div class="box 経営者">取締役（社長など）<br><small>経営のプロ</small></div>
+            <div class="arrow">↓</div>
+            <div class="arrow-text">「利益（お礼）を返す」</div>
+            <div class="box 会社">会社<br><small>みんなで働く場所</small></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>② メリットとリスク</h2>
+        <table>
+            <tr>
+                <th>立場</th>
+                <th>メリット(+)</th>
+                <th>リスク(-)</th>
+            </tr>
+            <tr>
+                <td>株主</td>
+                <td class="plus">配当金がもらえる<br>株が値上がる</td>
+                <td class="minus">出したお金が<br>ゼロになる</td>
+            </tr>
+            <tr>
+                <td>会社</td>
+                <td class="plus">大きな挑戦の<br>資金が集まる</td>
+                <td class="minus">自由に経営でき<br>ないこともある</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card" style="border-top-color: var(--accent);">
+        <h2>③ もっとも大事なルール</h2>
+        <p style="font-size: 0.9rem; text-align: center;">
+            <strong>「有限責任（ゆうげんせきにん）」</strong><br><br>
+            会社が借金を抱えて倒産しても、株主は「出したお金をあきらめる」だけでOK！<br>自分の家や財産まで取られることはありません。
+        </p>
+    </div>
+
+    <p class="footer-note">2026年版 ビジネスの仕組み解説図解</p>
+</div>
+
+</body>
+</html>
