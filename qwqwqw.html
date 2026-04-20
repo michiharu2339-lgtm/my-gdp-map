@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資本主義まるわかり図解</title>
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --secondary: #fbc02d;
+            --danger: #d32f2f;
+            --bg: #f5f6fa;
+            --card: #ffffff;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg);
+            color: #333;
+            margin: 0;
+            padding: 15px;
+            line-height: 1.6;
+        }
+        .container { max-width: 500px; margin: 0 auto; }
+        .header {
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .section {
+            background: var(--card);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary);
+        }
+        h2 { color: var(--primary); font-size: 1.2rem; margin-top: 0; display: flex; align-items: center; }
+        h2::before { content: "💡"; margin-right: 8px; }
+        
+        /* 図解エリア */
+        .diagram-box {
+            background: #fffbe6;
+            border: 2px dashed var(--secondary);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .flex-row { display: flex; justify-content: space-around; align-items: center; margin: 10px 0; }
+        .item { text-align: center; font-size: 0.8rem; font-weight: bold; }
+        .icon { font-size: 2rem; display: block; margin-bottom: 5px; }
+        .arrow { font-size: 1.5rem; color: var(--secondary); }
+
+        /* メリット・デメリット */
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .badge-plus { background-color: var(--primary); }
+        .badge-minus { background-color: var(--danger); }
+        
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 30px;
+            padding-bottom: 20px;
+        }
+        .summary-box {
+            background: #333;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1 style="margin:0; font-size:1.5rem;">資本主義のしくみ図解</h1>
+        <p style="margin:5px 0 0; font-size:0.9rem;">〜中学生でも直感でわかる〜</p>
+    </div>
+
+    <div class="section">
+        <h2>パン屋さんの競争</h2>
+        <p>「自由に競争」すると、もっと美味しく、もっと安くなる！</p>
+        <div class="diagram-box">
+            <div class="flex-row">
+                <div class="item"><span class="icon">🍞</span>A店<br>100円</div>
+                <div class="arrow">VS</div>
+                <div class="item"><span class="icon">🥐</span>B店<br>80円</div>
+            </div>
+            <p style="font-size:0.8rem; color:#666;">→ A店はもっと工夫したくなる！</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>お金を「働かせる」</h2>
+        <p>貯めるだけじゃなく、投資して増やすのがルール。</p>
+        <div class="diagram-box">
+            <div class="flex-row">
+                <div class="item"><span class="icon">💰</span>元手</div>
+                <div class="arrow">➔</div>
+                <div class="item"><span class="icon">⚙️</span>機械</div>
+                <div class="arrow">➔</div>
+                <div class="item"><span class="icon">💎</span>利益</div>
+            </div>
+            <p style="font-size:0.8rem; color:#666;">機械を買えば、もっとパンが焼ける！</p>
+        </div>
+    </div>
+
+    <div class="section" style="border-left-color: var(--primary);">
+        <span class="badge badge-plus">メリット</span>
+        <h2>世界が進化する</h2>
+        <ul style="padding-left: 20px; margin: 0;">
+            <li><strong>新しい発明：</strong>スマホやネットが誕生！</li>
+            <li><strong>選べる自由：</strong>好きな店で買える！</li>
+            <li><strong>豊かさ：</strong>生活がどんどん便利に。</li>
+        </ul>
+    </div>
+
+    <div class="section" style="border-left-color: var(--danger);">
+        <span class="badge badge-minus">デメリット</span>
+        <h2>影の部分</h2>
+        <ul style="padding-left: 20px; margin: 0;">
+            <li><strong>貧富の差：</strong>稼げる人とそうでない人。</li>
+            <li><strong>競争の疲れ：</strong>休みが取れないことも。</li>
+            <li><strong>環境：</strong>稼ぎすぎて自然を壊すリスク。</li>
+        </ul>
+    </div>
+
+    <div class="summary-box">
+        一言でいうと…<br>
+        <span style="color:var(--secondary); font-size:1.2rem;">「みんなの『もっと！』が<br>世界を動かすエネルギー」</span>
+    </div>
+
+    <div class="footer">
+        © 2026 世界一わかりやすい社会の授業
+    </div>
+</div>
+
+</body>
+</html>
