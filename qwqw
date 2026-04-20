@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>図解：資本主義のしくみ</title>
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --card-bg: #ffffff;
+            --primary: #2563eb;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --text: #1e293b;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text);
+            margin: 0;
+            padding: 15px;
+            line-height: 1.6;
+        }
+        .container { max-width: 500px; margin: auto; }
+        .header { text-align: center; padding: 20px 0; }
+        .header h1 { font-size: 1.5rem; color: var(--primary); margin: 0; }
+        
+        /* カードスタイル */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .card-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 8px;
+        }
+        
+        /* 構造図解（資本家 vs 労働者） */
+        .diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .box {
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .owner { background-color: #dbeafe; color: var(--primary); border: 2px solid var(--primary); }
+        .worker { background-color: #fef3c7; color: var(--accent); border: 2px solid var(--accent); }
+        
+        .arrow { text-align: center; font-size: 1.2rem; color: #94a3b8; margin: -5px 0; }
+        
+        /* メリット・デメリット */
+        .split { display: flex; gap: 10px; }
+        .split-item { flex: 1; padding: 10px; border-radius: 8px; font-size: 0.85rem; }
+        .light { background-color: #ecfdf5; border-left: 4px solid #10b981; }
+        .shadow { background-color: #fef2f2; border-left: 4px solid var(--danger); }
+        
+        /* 箇条書き */
+        ul { padding-left: 20px; margin: 10px 0; }
+        li { margin-bottom: 5px; font-size: 0.9rem; }
+        
+        .highlight { background: linear-gradient(transparent 70%, #fff9c4 70%); font-weight: bold; }
+        .footer-note { font-size: 0.8rem; text-align: center; color: #64748b; margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🚀 高校生のための資本主義図解</h1>
+    </div>
+
+    <div class="card">
+        <div class="card-title">① 資本主義を一言で言うと？</div>
+        <p><span class="highlight">「自由な競争で、持ち札を増やすゲーム」</span></p>
+        <ul>
+            <li><strong>自由：</strong> 自分の責任で勝負できる</li>
+            <li><strong>競争：</strong> 良いものを作れば選ばれる</li>
+            <li><strong>自己責任：</strong> 負けても自分のせい</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-title">② 社会の「二大役割」</div>
+        <div class="diagram">
+            <div class="box owner">資本家（オーナー）</div>
+            <div class="arrow">⬇️ 給料を払う / 仕組みを作る</div>
+            <div class="box worker">労働者（プレイヤー）</div>
+            <div class="arrow">⬆️ 時間とスキルを提供</div>
+        </div>
+        <p style="font-size: 0.85rem; color: #475569;">※ 利益の多くは、リスクを取って「仕組み」を作った資本家に集まる構造です。</p>
+    </div>
+
+    <div class="card">
+        <div class="card-title">③ 光と影（メリット・リスク）</div>
+        <div class="split">
+            <div class="split-item light">
+                <strong>☀️ 光</strong><br>
+                ・技術が進歩する<br>
+                ・物が安く便利に<br>
+                ・誰でも成功のチャンス
+            </div>
+            <div class="split-item shadow">
+                <strong>🌑 影</strong><br>
+                ・格差が広がる<br>
+                ・環境が壊れる<br>
+                ・メンタルが疲弊
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="border: 2px solid var(--accent);">
+        <div class="card-title">💡 君たちが主体的に生きるコツ</div>
+        <ul>
+            <li><span class="highlight">「替えの効かないスキル」</span>を身につける</li>
+            <li>お金を「使う」だけでなく<span class="highlight">「投資」</span>してみる</li>
+            <li>仕組みに<span class="highlight">「使われる側」から「作る側」</span>へ</li>
+        </ul>
+    </div>
+
+    <div class="footer-note">
+        2026.04.21 | 経済と社会の講義
+    </div>
+</div>
+
+</body>
+</html>
