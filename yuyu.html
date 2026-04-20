@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最強・資本主義図解ノート</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #e67e22;
+            --success: #27ae60;
+            --danger: #e74c3c;
+            --bg: #f4f7f6;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(135deg, var(--primary), #4ca1af);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 { font-size: 1.5rem; margin: 0; }
+        p.subtitle { font-size: 0.9rem; opacity: 0.9; }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 5px;
+        }
+
+        /* 資本主義のサイクル図解 */
+        .cycle-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .node {
+            width: 80%;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .node-shihon { background-color: #3498db; }
+        .node-rodo { background-color: #9b59b6; }
+        .node-rieki { background-color: var(--success); }
+
+        .arrow { font-size: 1.5rem; color: #ccc; }
+
+        /* メリット・デメリット */
+        .box {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .box-plus { background-color: #eafaf1; border-left: 5px solid var(--success); }
+        .box-minus { background-color: #fdedec; border-left: 5px solid var(--danger); }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .tag-plus { background: var(--success); color: white; }
+        .tag-minus { background: var(--danger); color: white; }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            padding: 20px;
+        }
+
+        .highlight { background: linear-gradient(transparent 70%, #fff176 70%); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>1分でわかる！資本主義</h1>
+        <p class="subtitle">〜お金と自由のルール〜</p>
+    </header>
+
+    <div class="card">
+        <div class="section-title">❶ 一言でいうと？</div>
+        <p><span class="highlight">「自分の道具でお金を増やす自由な競争」</span>のこと！</p>
+        <p style="font-size: 0.85rem;">誰かに命令されるのではなく、みんなが「もっと良くしたい」と思うことで社会が動く仕組みです。</p>
+    </div>
+
+    <div class="card">
+        <div class="section-title">❷ パン屋さんのサイクル</div>
+        <div class="cycle-container">
+            <div class="node node-shihon">資本（しほん）<br><span style="font-size: 0.7rem; font-weight: normal;">オーブン・材料・お店</span></div>
+            <div class="arrow">↓ 使う</div>
+            <div class="node node-rodo">労働（ろうどう）<br><span style="font-size: 0.7rem; font-weight: normal;">店員さんのパワー</span></div>
+            <div class="arrow">↓ 売る</div>
+            <div class="node node-rieki">利益（りえき）<br><span style="font-size: 0.7rem; font-weight: normal;">手元に残る儲け</span></div>
+            <div class="arrow">↺ また「資本」に投資！</div>
+        </div>
+        <p style="font-size: 0.85rem; margin-top: 10px;">儲けたお金で<span class="highlight">「もっといいオーブン」</span>を買って、さらにお店を大きくするのが資本主義の基本！</p>
+    </div>
+
+    <div class="card">
+        <div class="section-title">❸ メリットとデメリット</div>
+        
+        <span class="tag tag-plus">光：いいところ</span>
+        <div class="box box-plus">
+            <b>競争で進化する！</b><br>
+            ライバルに勝つために、安くて便利なスマホや新しい薬がどんどん生まれる。
+        </div>
+
+        <span class="tag tag-minus">影：こまったところ</span>
+        <div class="box box-minus">
+            <b>格差がひろがる</b><br>
+            お金持ちはもっとお金持ちに、貧しい人はそのままになりやすい。
+        </div>
+        <div class="box box-minus">
+            <b>地球が疲れる</b><br>
+            「大量に作って儲けよう」としすぎて、ゴミ問題や温暖化が進んでしまう。
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="section-title">❹ これからの付き合い方</div>
+        <p>資本主義は強力なエンジンですが、ブレーキも必要です。</p>
+        <ul>
+            <li><span class="highlight">「安い理由」を考える</span></li>
+            <li><span class="highlight">環境にいい会社を応援する</span></li>
+        </ul>
+        <p style="font-size: 0.85rem;">私たちが「何にお金を使うか」の1票が、これからの資本主義の形を決めます！</p>
+    </div>
+
+    <footer>
+        © 2026 世界一わかりやすい社会科教室
+    </footer>
+</div>
+
+</body>
+</html>
