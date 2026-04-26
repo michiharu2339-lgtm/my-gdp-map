@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --card-bg: #ffffff;
+            --primary-color: #2e7d32;
+            --accent-color: #fbc02d;
+            --text-color: #333;
+            --danger-color: #d32f2f;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 10px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #1b5e20, #4caf50);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-color);
+        }
+        .concept-diagram {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .arrow {
+            font-size: 1.5em;
+            color: var(--primary-color);
+        }
+        .step-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+            background: linear-gradient(transparent 70%, #c8e6c9 70%);
+        }
+        .calendar-box {
+            border: 2px dashed #ccc;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .check-list {
+            list-style: none;
+            padding: 0;
+        }
+        .check-list li::before {
+            content: "✅";
+            margin-right: 8px;
+        }
+        .warning-box {
+            background-color: #fff3e0;
+            border: 1px solid #ffb74d;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+        .formula {
+            background: #333;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-family: monospace;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 style="margin:0; font-size: 1.5em;">💰 配当金の超図解ガイド</h1>
+            <p style="margin:5px 0 0; font-size: 0.9em;">中学生でもわかる「投資の果実」</p>
+        </div>
+
+        <div class="card">
+            <span class="step-badge">STEP 1</span>
+            <h3>配当金ってなに？</h3>
+            <p>会社が稼いだ<span class="highlight">「利益のお裾分け」</span>です。</p>
+            <div class="concept-diagram">
+                <div>🏢 会社<br>(大もうけ!)</div>
+                <div class="arrow">➡️</div>
+                <div>🎁 配当金<br>(お礼の現金)</div>
+                <div class="arrow">➡️</div>
+                <div>👤 あなた<br>(株主)</div>
+            </div>
+            <p style="font-size: 0.85em; color: #666;">※持っている株の数が多いほど、もらえる金額もアップします！</p>
+        </div>
+
+        <div class="card">
+            <span class="step-badge">STEP 2</span>
+            <h3>いつ・どうやってもらう？</h3>
+            <p>「権利」がもらえる日に株を持っていればOK！</p>
+            <div class="calendar-box">
+                <p><strong>📅 権利付最終日（締め切り日）</strong></p>
+                <p style="font-size: 1.2em;">この日の夜に株を持っておく</p>
+                <div class="arrow">⬇️ 翌日</div>
+                <p><strong>📅 権利落ち日</strong></p>
+                <p>売っても配当はもらえる（後で振込）</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="step-badge">STEP 3</span>
+            <h3>メリットと落とし穴</h3>
+            <ul class="check-list">
+                <li>寝ている間にお金が増える（不労所得）</li>
+                <li>銀行の利息よりずっと高い（ことが多い）</li>
+            </ul>
+            <div class="warning-box">
+                <strong>⚠️ ここに注意！</strong><br>
+                ・業績が悪いと配当が「ゼロ」になることも。<br>
+                ・株価が下がると、配当以上にお金が減るリスクあり。
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="step-badge">STEP 4</span>
+            <h3>重要指標：配当利回り</h3>
+            <p>「その株でお金が何％増えるか」の計算式です。</p>
+            <div class="formula">
+                1年間の配当金 ÷ 株を買った値段 × 100
+            </div>
+            <p>例：10万円の株で3,000円もらえるなら<br>➡️ <span class="highlight">配当利回り 3％</span></p>
+        </div>
+
+        <div class="footer">
+            © 2026 投資教育アドバイザー図解シリーズ
+        </div>
+    </div>
+</body>
+</html>
